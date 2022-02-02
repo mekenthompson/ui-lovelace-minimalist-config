@@ -1,0 +1,34 @@
+---
+#--------------------------------------#
+# Tab : Header Menu                    #
+#--------------------------------------#
+- type: "custom:button-card"
+  template: chip_icon_only
+  variables:
+    ulm_chip_icon_only: "🏠"
+  tap_action:
+    action: "navigate"
+    navigation_path: home
+- type: "custom:button-card"
+  template: chip_icon_only
+  variables:
+    ulm_chip_icon_only: "💡"
+  tap_action:
+    action: "navigate"
+    navigation_path: lights
+- type: "custom:button-card"
+  template: chip_temperature
+  variables:
+    ulm_chip_temperature_inside: sensor.living_temperature
+    ulm_chip_temperature_outside: sensor.rumpus_temperature
+    ulm_chip_temperature_weather: weather.ascot_vale
+  tap_action:
+    action: "navigate"
+    navigation_path: climate
+- type: "custom:button-card"
+  template: chip_icon_only
+  variables:
+    ulm_chip_icon_only: "🔥"
+  tap_action:
+    action: "navigate"
+    navigation_path: climate

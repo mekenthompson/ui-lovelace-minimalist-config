@@ -1,0 +1,109 @@
+---
+#--------------------------------------#
+# Tab : Header Menu                    #
+#--------------------------------------#
+- type: horizontal-stack
+  cards: !include ui-header-menu.yaml
+#--------------------------------------#
+# Tab : Cards                          #
+#--------------------------------------#
+- type: vertical-stack
+  cards:
+    - type: "custom:button-card"
+      template: card_title
+      name: temperatures
+      label:
+    - type: "custom:button-card"
+      template: card_weather
+      entity: weather.ascot_vale
+      variables:
+        ulm_card_weather_name: " "
+        ulm_card_weather_primary_info:
+          - wind_speed
+          - precipitation_probability
+        ulm_card_weather_backdrop:
+          fade: true
+- type: vertical-stack
+  cards:
+    - type: custom:button-card
+      template: custom_card_httpedo13_thermostat_with_buttons
+      variables:
+        entity: climate.all_heating
+        name: All Heating
+    - type: custom:button-card
+      template: custom_card_tpx01_aircondition_with_buttons
+      variables:
+        entity: climate.all_cooling
+        name: All Cooling
+    - type: custom:button-card
+      template: card_ac
+      variables:
+        ulm_card_ac_entity: climate.all_cooling
+        ulm_card_ac_fan_mode_sensor: sensor.living_cooling_temperature
+        ulm_card_ac_name: "AC"
+- type: vertical-stack
+  cards:
+    - type: "custom:button-card"
+      template: card_title
+      name:
+      label: Interior
+    - type: horizontal-stack
+      cards:
+        - type: "custom:button-card"
+          template: card_graph
+          variables:
+            ulm_card_graph_color: "var(--google-blue)"
+            ulm_card_graph_name: Temperature
+            ulm_card_graph_entity: sensor.living_temperature
+            ulm_card_graph_type: fill
+            ulm_card_graph_hours: 24
+        - type: "custom:button-card"
+          template: card_graph
+          variables:
+            ulm_card_graph_color: "var(--google-blue)"
+            ulm_card_graph_name: luminosity
+            ulm_card_graph_entity: sensor.office_temperature
+            ulm_card_graph_type: fill
+            ulm_card_graph_hours: 24
+    # - type: horizontal-stack
+    #   cards:
+    #     - type: 'custom:button-card'
+    #       template: card_graph
+    #       variables:
+    #         ulm_card_graph_color: "var(--google-blue)"
+    #         ulm_card_graph_name: Presure
+    #         ulm_card_graph_entity: <Your Presure sensor entity>
+    #         ulm_card_graph_type: fill
+    #         ulm_card_graph_hours: 24
+    #     - type: 'custom:button-card'
+    #       template: card_graph
+    #       variables:
+    #         ulm_card_graph_color: "var(--google-blue)"
+    #         ulm_card_graph_name: Presure
+    #         ulm_card_graph_entity: <Your Presure sensor entity>
+    #         ulm_card_graph_type: fill
+    #         ulm_card_graph_hours: 24
+- type: vertical-stack
+  cards:
+    - type: "custom:button-card"
+      template: card_title
+      name:
+      label: Exterior
+    - type: horizontal-stack
+      cards:
+        - type: "custom:button-card"
+          template: card_graph
+          variables:
+            ulm_card_graph_color: "var(--google-green)"
+            ulm_card_graph_name: Temperature
+            ulm_card_graph_entity: sensor.multi_front_gate_temperature
+            ulm_card_graph_type: fill
+            ulm_card_graph_hours: 24
+        # - type: 'custom:button-card'
+        #   template: card_graph
+        #   variables:
+        #     ulm_card_graph_color: "var(--google-green)"
+        #     ulm_card_graph_name: luminosity
+        #     ulm_card_graph_entity: <Your luminosity sensor entity>
+        #     ulm_card_graph_type: fill
+        #     ulm_card_graph_hours: 24

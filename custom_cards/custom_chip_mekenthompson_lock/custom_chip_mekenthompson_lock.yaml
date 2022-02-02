@@ -1,0 +1,39 @@
+---
+### chip_lock ###
+custom_chip_mekenthompson_lock:
+  template:
+    - "chip_icon_label"
+    - "custom_chip_mekenthompson_lock_language_variables"
+    - "ulm_language_variables"
+  label: |
+    [[[
+      var lock_label = variables.ulm_unknown;
+      if (entity.state == "locked"){
+        var lock_label = variables.custom_chip_mekenthompson_lock_locked;
+      } else if(entity.state == "unlocked"){
+        var lock_label = variables.custom_chip_mekenthompson_lock_unlocked;
+      }
+      return lock_label;
+    ]]]
+  icon: |
+    [[[
+      var lock_icon = "mdi:lock-outline";
+      if (entity.state == "locked"){
+        var lock_icon = "mdi:lock";
+      } else if(entity.state == "unlocked"){
+        var lock_icon = "mdi:lock-open-alert";
+      } 
+      return lock_icon;
+    ]]]
+  styles:
+    icon:
+      - color: |
+          [[[
+            var lock_color = "var(--google-yellow)";
+            if (entity.state == "locked"){
+              var lock_color = "var(--google-green)";
+            } else if(entity.state == "unlocked"){
+              var lock_color = "var(--google-red)";
+            }
+            return lock_color;
+          ]]]

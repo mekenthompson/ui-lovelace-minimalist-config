@@ -1,0 +1,539 @@
+#--------------------------------------#
+# Tab : Header Menu                    #
+#--------------------------------------#
+- type: horizontal-stack
+  cards: !include ui-header-menu.yaml
+#--------------------------------------#
+# Tab : Cards                          #
+#--------------------------------------#
+- type: "custom:button-card"
+  template: card_weather
+  entity: weather.ascot_vale
+  variables:
+    ulm_card_weather_name: " "
+    ulm_card_weather_primary_info:
+      - wind_speed
+      - precipitation_probability
+    ulm_card_weather_backdrop:
+      fade: true
+- type: horizontal-stack
+  cards:
+    # - type: custom:button-card
+    #   entity: switch.linea_mini_main
+    #   label: Espresso
+    #   template: chip_mdi_icon_state
+    #   variables:
+    #     ulm_chip_mdi_icon_state_entity: switch.linea_mini_main
+    #     ulm_chip_mdi_icon_state_icon: mdi:coffee
+    #   action:
+    #   tap_action:
+    #     action: toggle
+    - type: custom:button-card
+      entity: lock.lock_front_door_lock
+      label: Front Door
+      template: custom_chip_mekenthompson_lock
+      action:
+      tap_action:
+        action: call-service
+        service: lock.lock
+        service_data:
+          entity_id: lock.lock_front_door_lock
+      hold_action:
+        action: call-service
+        service: lock.unlock
+        service_data:
+          entity_id: lock.lock_front_door_lock
+    - type: custom:button-card
+      entity: lock.lock_garage_entry_door_lock
+      label: Garage Entry
+      template: custom_chip_mekenthompson_lock
+      tap_action:
+        action: call-service
+        service: lock.lock
+        service_data:
+          entity_id: lock.lock_garage_entry_door_lock
+      hold_action:
+        action: call-service
+        service: lock.unlock
+        service_data:
+          entity_id: lock.lock_garage_entry_door_lock
+    - type: custom:button-card
+      label: Garage Door
+      template: chip_mdi_icon_state
+      variables:
+        ulm_chip_mdi_icon_state_entity: cover.garage_door
+        ulm_chip_mdi_icon_state_icon: mdi:garage
+      entity: cover.garage_door
+      tap_action:
+        action: call-service
+        service: cover.close_cover
+        service_data:
+          entity_id: cover.garage_door
+      hold_action:
+        action: call-service
+        service: cover.open_cover
+        service_data:
+          entity_id: cover.garage_door
+- type: vertical-stack
+  cards:
+    - type: custom:fold-entity-row
+      head:
+        type: "custom:button-card"
+        template: card_light
+        entity: light.ground_floor_lights
+        variables:
+          ulm_card_light_enable_slider: true
+          ulm_card_light_enable_collapse: true
+          ulm_card_light_enable_color: false
+          ulm_card_light_enable_popup: true
+          ulm_card_light_force_background_color: false
+          ulm_card_light_enable_horizontal: true
+      show_header_toggle: false
+      entities:
+        - type: "custom:button-card"
+          template: card_light
+          entity: light.kitchen_lights
+          variables:
+            ulm_card_light_enable_slider: true
+            ulm_card_light_enable_collapse: true
+            ulm_card_light_enable_color: false
+            ulm_card_light_enable_popup: true
+            ulm_card_light_force_background_color: false
+            ulm_card_light_enable_horizontal: true
+        - type: "custom:button-card"
+          template: card_light
+          entity: light.living_room_lights
+          variables:
+            ulm_card_light_enable_slider: true
+            ulm_card_light_enable_collapse: true
+            ulm_card_light_enable_color: false
+            ulm_card_light_enable_popup: true
+            ulm_card_light_force_background_color: false
+            ulm_card_light_enable_horizontal: true
+        - type: "custom:button-card"
+          template: card_light
+          entity: light.fireplace_lights
+          variables:
+            ulm_card_light_enable_slider: true
+            ulm_card_light_enable_collapse: true
+            ulm_card_light_enable_color: false
+            ulm_card_light_enable_popup: true
+            ulm_card_light_force_background_color: false
+            ulm_card_light_enable_horizontal: true
+        - type: "custom:button-card"
+          template: card_light
+          entity: light.dining_lights
+          variables:
+            ulm_card_light_enable_slider: true
+            ulm_card_light_enable_collapse: true
+            ulm_card_light_enable_color: false
+            ulm_card_light_enable_popup: true
+            ulm_card_light_force_background_color: false
+            ulm_card_light_enable_horizontal: true
+        - type: "custom:button-card"
+          template: card_light
+          entity: light.library_lights
+          variables:
+            ulm_card_light_enable_slider: true
+            ulm_card_light_enable_collapse: true
+            ulm_card_light_enable_color: false
+            ulm_card_light_enable_popup: true
+            ulm_card_light_force_background_color: false
+            ulm_card_light_enable_horizontal: true
+        - type: "custom:button-card"
+          template: card_light
+          entity: light.butler_s_pantry_lights
+          variables:
+            ulm_card_light_enable_slider: true
+            ulm_card_light_enable_collapse: true
+            ulm_card_light_enable_color: false
+            ulm_card_light_enable_popup: true
+            ulm_card_light_force_background_color: false
+            ulm_card_light_enable_horizontal: true
+        - type: "custom:button-card"
+          template: card_light
+          entity: light.entry_lights
+          variables:
+            ulm_card_light_enable_slider: true
+            ulm_card_light_enable_collapse: true
+            ulm_card_light_enable_color: false
+            ulm_card_light_enable_popup: true
+            ulm_card_light_force_background_color: false
+            ulm_card_light_enable_horizontal: true
+        - type: "custom:button-card"
+          template: card_light
+          entity: light.guest_bedroom_lights
+          variables:
+            ulm_card_light_enable_slider: true
+            ulm_card_light_enable_collapse: true
+            ulm_card_light_enable_color: false
+            ulm_card_light_enable_popup: true
+            ulm_card_light_force_background_color: false
+            ulm_card_light_enable_horizontal: true
+        - type: "custom:button-card"
+          template: card_light
+          entity: light.guest_bath_lights
+          variables:
+            ulm_card_light_enable_slider: true
+            ulm_card_light_enable_collapse: true
+            ulm_card_light_enable_color: false
+            ulm_card_light_enable_popup: true
+            ulm_card_light_force_background_color: false
+            ulm_card_light_enable_horizontal: true
+        - type: "custom:button-card"
+          template: card_light
+          entity: light.garage_on_off
+          variables:
+            ulm_card_light_enable_slider: true
+            ulm_card_light_enable_collapse: true
+            ulm_card_light_enable_color: false
+            ulm_card_light_enable_popup: true
+            ulm_card_light_force_background_color: false
+            ulm_card_light_enable_horizontal: true
+    - type: custom:fold-entity-row
+      head:
+        type: "custom:button-card"
+        template: card_light
+        entity: light.first_floor_lights
+        variables:
+          ulm_card_light_enable_slider: true
+          ulm_card_light_enable_collapse: true
+          ulm_card_light_enable_color: false
+          ulm_card_light_enable_popup: true
+          ulm_card_light_force_background_color: false
+          ulm_card_light_enable_horizontal: true
+      show_header_toggle: false
+      entities:
+        - type: "custom:button-card"
+          template: card_light
+          entity: light.master_bedroom_lights
+          variables:
+            ulm_card_light_enable_slider: true
+            ulm_card_light_enable_collapse: true
+            ulm_card_light_enable_color: false
+            ulm_card_light_enable_popup: true
+            ulm_card_light_force_background_color: false
+            ulm_card_light_enable_horizontal: true
+        - type: "custom:button-card"
+          template: card_light
+          entity: light.ensuite_lights
+          variables:
+            ulm_card_light_enable_slider: true
+            ulm_card_light_enable_collapse: true
+            ulm_card_light_enable_color: false
+            ulm_card_light_enable_popup: true
+            ulm_card_light_force_background_color: false
+            ulm_card_light_enable_horizontal: true
+        - type: "custom:button-card"
+          template: card_light
+          entity: light.office_lights
+          variables:
+            ulm_card_light_enable_slider: true
+            ulm_card_light_enable_collapse: true
+            ulm_card_light_enable_color: false
+            ulm_card_light_enable_popup: true
+            ulm_card_light_force_background_color: false
+            ulm_card_light_enable_horizontal: true
+        - type: "custom:button-card"
+          template: card_light
+          entity: light.master_robe_lights
+          variables:
+            ulm_card_light_enable_slider: true
+            ulm_card_light_enable_collapse: true
+            ulm_card_light_enable_color: false
+            ulm_card_light_enable_popup: true
+            ulm_card_light_force_background_color: false
+            ulm_card_light_enable_horizontal: true
+        - type: "custom:button-card"
+          template: card_light
+          entity: light.stairs_up_lights
+          variables:
+            ulm_card_light_enable_slider: true
+            ulm_card_light_enable_collapse: true
+            ulm_card_light_enable_color: false
+            ulm_card_light_enable_popup: true
+            ulm_card_light_force_background_color: false
+            ulm_card_light_enable_horizontal: true
+    - type: custom:fold-entity-row
+      head:
+        type: "custom:button-card"
+        template: card_light
+        entity: light.lower_ground_lights
+        variables:
+          ulm_card_light_enable_slider: true
+          ulm_card_light_enable_collapse: true
+          ulm_card_light_enable_color: false
+          ulm_card_light_enable_popup: true
+          ulm_card_light_force_background_color: false
+          ulm_card_light_enable_horizontal: true
+      show_header_toggle: false
+      entities:
+        - type: "custom:button-card"
+          template: card_light
+          entity: light.rumpus_lights
+          variables:
+            ulm_card_light_enable_slider: true
+            ulm_card_light_enable_collapse: true
+            ulm_card_light_enable_color: false
+            ulm_card_light_enable_popup: true
+            ulm_card_light_force_background_color: false
+            ulm_card_light_enable_horizontal: true
+        - type: "custom:button-card"
+          template: card_light
+          entity: light.sidney_s_lights
+          variables:
+            ulm_card_light_enable_slider: true
+            ulm_card_light_enable_collapse: true
+            ulm_card_light_enable_color: false
+            ulm_card_light_enable_popup: true
+            ulm_card_light_force_background_color: false
+            ulm_card_light_enable_horizontal: true
+        - type: "custom:button-card"
+          template: card_light
+          entity: light.sidney_lamp
+          variables:
+            ulm_card_light_enable_slider: true
+            ulm_card_light_enable_collapse: true
+            ulm_card_light_enable_color: false
+            ulm_card_light_enable_popup: true
+            ulm_card_light_force_background_color: false
+            ulm_card_light_enable_horizontal: true
+        - type: "custom:button-card"
+          template: card_light
+          entity: light.mabel_s_lights
+          variables:
+            ulm_card_light_enable_slider: true
+            ulm_card_light_enable_collapse: true
+            ulm_card_light_enable_color: false
+            ulm_card_light_enable_popup: true
+            ulm_card_light_force_background_color: false
+            ulm_card_light_enable_horizontal: true
+        - type: "custom:button-card"
+          template: card_light
+          entity: light.mabel_lamp
+          variables:
+            ulm_card_light_enable_slider: true
+            ulm_card_light_enable_collapse: true
+            ulm_card_light_enable_color: false
+            ulm_card_light_enable_popup: true
+            ulm_card_light_force_background_color: false
+            ulm_card_light_enable_horizontal: true
+        - type: "custom:button-card"
+          template: card_light
+          entity: light.kid_s_bathroom
+          variables:
+            ulm_card_light_enable_slider: true
+            ulm_card_light_enable_collapse: true
+            ulm_card_light_enable_color: false
+            ulm_card_light_enable_popup: true
+            ulm_card_light_force_background_color: false
+            ulm_card_light_enable_horizontal: true
+        - type: "custom:button-card"
+          template: card_light
+          entity: light.stairs_down_lights
+          variables:
+            ulm_card_light_enable_slider: true
+            ulm_card_light_enable_collapse: true
+            ulm_card_light_enable_color: false
+            ulm_card_light_enable_popup: true
+            ulm_card_light_force_background_color: false
+            ulm_card_light_enable_horizontal: true
+    - type: custom:fold-entity-row
+      head:
+        type: "custom:button-card"
+        template: card_light
+        entity: light.outdoor_lights
+        variables:
+          ulm_card_light_enable_slider: true
+          ulm_card_light_enable_collapse: true
+          ulm_card_light_enable_color: false
+          ulm_card_light_enable_popup: true
+          ulm_card_light_force_background_color: false
+          ulm_card_light_enable_horizontal: true
+      show_header_toggle: false
+      entities:
+        - type: "custom:button-card"
+          template: card_light
+          entity: light.front_yard_lights
+          variables:
+            ulm_card_light_enable_slider: true
+            ulm_card_light_enable_collapse: true
+            ulm_card_light_enable_color: false
+            ulm_card_light_enable_popup: true
+            ulm_card_light_force_background_color: false
+            ulm_card_light_enable_horizontal: true
+        - type: "custom:button-card"
+          template: card_light
+          entity: light.deck_lights
+          variables:
+            ulm_card_light_enable_slider: true
+            ulm_card_light_enable_collapse: true
+            ulm_card_light_enable_color: false
+            ulm_card_light_enable_popup: true
+            ulm_card_light_force_background_color: false
+            ulm_card_light_enable_horizontal: true
+        - type: "custom:button-card"
+          template: card_light
+          entity: light.festoon_lights
+          variables:
+            ulm_card_light_enable_slider: true
+            ulm_card_light_enable_collapse: true
+            ulm_card_light_enable_color: false
+            ulm_card_light_enable_popup: true
+            ulm_card_light_force_background_color: false
+            ulm_card_light_enable_horizontal: true
+        - type: "custom:button-card"
+          template: card_light
+          entity: light.festoon_control
+          variables:
+            ulm_card_light_enable_slider: true
+            ulm_card_light_enable_collapse: true
+            ulm_card_light_enable_color: false
+            ulm_card_light_enable_popup: true
+            ulm_card_light_force_background_color: false
+            ulm_card_light_enable_horizontal: true
+        - type: "custom:button-card"
+          template: card_light
+          entity: light.balcony_lights
+          variables:
+            ulm_card_light_enable_slider: true
+            ulm_card_light_enable_collapse: true
+            ulm_card_light_enable_color: false
+            ulm_card_light_enable_popup: true
+            ulm_card_light_force_background_color: false
+            ulm_card_light_enable_horizontal: true
+- type: vertical-stack
+  cards:
+  - type: entities
+    entities:
+      - type: custom:fold-entity-row
+        head:
+          entity: climate.all_heating
+          name: Heating
+          type: custom:slider-entity-row
+          icon: mdi:fire
+          state_color: true
+        show_header_toggle: false
+        entities:
+          - type: custom:slider-entity-row
+            entity: climate.living
+            icon: mdi:fire
+            state_color: true
+          - type: custom:slider-entity-row
+            entity: climate.guest_room
+            icon: mdi:fire
+            state_color: true
+          - type: custom:slider-entity-row
+            entity: climate.kid_s_rooms
+            icon: mdi:fire
+            state_color: true
+          - type: custom:slider-entity-row
+            entity: climate.rumpus
+            icon: mdi:fire
+            state_color: true
+          - type: custom:slider-entity-row
+            entity: climate.master
+            icon: mdi:fire
+            state_color: true
+          - type: custom:slider-entity-row
+            entity: climate.office
+            icon: mdi:fire
+            state_color: true
+      - type: custom:fold-entity-row
+        head:
+          entity: climate.all_cooling
+          name: Cooling
+          type: custom:slider-entity-row
+          icon: mdi:snowflake
+          state_color: true
+        show_header_toggle: false
+        entities:
+          - type: custom:slider-entity-row
+            entity: climate.living_cooling
+            icon: mdi:snowflake
+            state_color: true
+          - type: custom:slider-entity-row
+            entity: climate.master_cooling
+            icon: mdi:snowflake
+            state_color: true
+          - type: custom:slider-entity-row
+            entity: climate.office_cooling
+            icon: mdi:snowflake
+            state_color: true
+      - entity: fan.fireplace
+        state_color: true
+        icon: mdi:fireplace
+      - entity: fan.living_room_fan
+        state_color: true
+      - entity: cover.master_curtains
+        state_color: true
+        icon: mdi:curtains
+    state_color: true
+# - type: vertical-stack
+#   cards:
+#     - type: entities
+#       entities:
+#     - type: custom:fold-entity-row
+#       head:
+#         entity: group.back_yard_sprinklers
+#         name: Sprinklers
+#         icon: mdi:sprinkler-variant
+#         state_color: true
+#       show_header_toggle: false
+#       entities:
+#       - entity: switch.back_yard_front
+#         name: Back Yard (Front)
+#         icon: mdi:sprinkler
+#         state_color: true
+#       - entity: switch.back_yard_rear
+#         name: Back Yard (Rear)
+#         icon: mdi:sprinkler
+#         state_color: true
+#       - entity: input_number.back_yard_all_stations_minutes
+#         name: Minutes
+- type: vertical-stack
+  cards:
+  - type: 'custom:button-card'
+    template: chip_mdi_icon_state
+    entity: group.kids_tv_control
+    label: Kids TV
+    icon: 'mdi:television-box'
+    variables:
+      ulm_chip_mdi_icon_state_entity: group.kids_tv_control
+      ulm_chip_mdi_icon_state_icon: mdi:television-box
+    tap_action:
+      action: call-service
+      service: switch.toggle
+      service_data:
+        entity_id: group.kids_tv_control
+  - type: 'custom:button-card'
+    template: chip_icon_label
+    label: Reset Adaptive Lighting
+    icon: 'mdi:restart'
+    tap_action:
+      action: call-service
+      service: script.turn_on
+      service_data:
+        entity_id: script.reset_adaptive_lighting
+  - type: 'custom:button-card'
+    template: chip_icon_label
+    label: Reset Kids Night Mode
+    icon: 'mdi:restart'
+    tap_action:
+      action: call-service
+      service: script.turn_on
+      service_data:
+        entity_id: script.kids_night_mode
+  - type: 'custom:button-card'
+    template: chip_mdi_icon_state
+    entity: switch.sonos_group
+    label: Sonos Group
+    icon: 'mdi:speaker'
+    variables:
+      ulm_chip_mdi_icon_state_entity: switch.sonos_group
+      ulm_chip_mdi_icon_state_icon: mdi:speaker
+    tap_action:
+      action: call-service
+      service: switch.toggle
+      service_data:
+        entity_id: switch.sonos_group

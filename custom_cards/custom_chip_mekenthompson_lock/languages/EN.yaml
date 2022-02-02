@@ -1,0 +1,5 @@
+---
+custom_chip_mekenthompson_lock_language_variables:
+  variables:
+    custom_chip_mekenthompson_lock_locked: "locked"
+    custom_chip_mekenthompson_lock_unlocked: "unlocked"
