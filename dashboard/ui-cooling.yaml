@@ -1,0 +1,93 @@
+---
+#--------------------------------------#
+# Tab : Header Menu                    #
+#--------------------------------------#
+- type: horizontal-stack
+  cards: !include ui-header-menu.yaml
+#--------------------------------------#
+# Tab : Cards                          #
+#--------------------------------------#
+- type: vertical-stack
+  cards:
+    - type: "custom:button-card"
+      template: card_title
+      name: Cooling
+      label:
+    - type: "custom:button-card"
+      template: card_weather
+      entity: weather.ascot_vale
+      variables:
+        ulm_card_weather_name: " "
+        ulm_card_weather_primary_info:
+          - wind_speed
+          - precipitation_probability
+        ulm_card_weather_backdrop:
+          fade: true
+- type: vertical-stack
+  cards:
+    - type: "custom:button-card"
+      template: card_graph
+      variables:
+        ulm_card_graph_color: "var(--google-blue)"
+        ulm_card_graph_name: Average Temp
+        ulm_card_graph_entity: sensor.average_house_temperature
+        ulm_card_graph_type: fill
+        ulm_card_graph_hours: 24
+    - type: 'custom:button-card'
+      template: card_ac_buttons
+      variables:
+        ulm_card_ac_entity: climate.all_cooling
+        ulm_card_ac_fan_mode_sensor: sensor.average_house_temperature
+        ulm_card_ac_name: 'All Cooling'
+    - type: horizontal-stack
+      cards:
+        - type: "custom:button-card"
+          template: card_graph
+          variables:
+            ulm_card_graph_color: "var(--google-blue)"
+            ulm_card_graph_name: Ground Floor
+            ulm_card_graph_entity: sensor.ground_floor_temperature
+            ulm_card_graph_type: fill
+            ulm_card_graph_hours: 24
+        - type: 'custom:button-card'
+          template: card_ac_buttons
+          variables:
+            ulm_card_ac_entity: climate.living_cooling
+            ulm_card_ac_fan_mode_sensor: sensor.living_cooling_temperature
+            ulm_card_ac_name: 'Living Cooling'
+- type: vertical-stack
+  cards:
+    - type: horizontal-stack
+      cards:
+        - type: "custom:button-card"
+          template: card_graph
+          variables:
+            ulm_card_graph_color: "var(--google-blue)"
+            ulm_card_graph_name: Master
+            ulm_card_graph_entity: sensor.master_temperature
+            ulm_card_graph_type: fill
+            ulm_card_graph_hours: 24
+        - type: 'custom:button-card'
+          template: card_ac_buttons
+          variables:
+            ulm_card_ac_entity: climate.master_cooling
+            ulm_card_ac_fan_mode_sensor: sensor.master_cooling_temperature
+            ulm_card_ac_name: 'Master Cooling'
+- type: vertical-stack
+  cards:
+    - type: horizontal-stack
+      cards:
+        - type: "custom:button-card"
+          template: card_graph
+          variables:
+            ulm_card_graph_color: "var(--google-blue)"
+            ulm_card_graph_name: Office
+            ulm_card_graph_entity: sensor.office_temperature
+            ulm_card_graph_type: fill
+            ulm_card_graph_hours: 24
+        - type: 'custom:button-card'
+          template: card_ac_buttons
+          variables:
+            ulm_card_ac_entity: climate.office_cooling
+            ulm_card_ac_fan_mode_sensor: sensor.office_cooling_temperature
+            ulm_card_ac_name: 'Office Cooling'

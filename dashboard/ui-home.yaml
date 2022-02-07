@@ -1,3 +1,4 @@
+---
 #--------------------------------------#
 # Tab : Header Menu                    #
 #--------------------------------------#
@@ -30,7 +31,7 @@
     #     action: toggle
     - type: custom:button-card
       entity: lock.lock_front_door_lock
-      label: Front Door
+      label: Front
       template: custom_chip_mekenthompson_lock
       action:
       tap_action:
@@ -45,7 +46,7 @@
           entity_id: lock.lock_front_door_lock
     - type: custom:button-card
       entity: lock.lock_garage_entry_door_lock
-      label: Garage Entry
+      label: Garage
       template: custom_chip_mekenthompson_lock
       tap_action:
         action: call-service
@@ -58,11 +59,8 @@
         service_data:
           entity_id: lock.lock_garage_entry_door_lock
     - type: custom:button-card
-      label: Garage Door
-      template: chip_mdi_icon_state
-      variables:
-        ulm_chip_mdi_icon_state_entity: cover.garage_door
-        ulm_chip_mdi_icon_state_icon: mdi:garage
+      label:
+      template: custom_chip_mekenthompson_garage
       entity: cover.garage_door
       tap_action:
         action: call-service
@@ -74,6 +72,78 @@
         service: cover.open_cover
         service_data:
           entity_id: cover.garage_door
+    - type: "custom:button-card"
+      template: chip_mdi_icon_only
+      entity: fan.fireplace
+      variables:
+        ulm_chip_mdi_icon_only_entity: fan.fireplace
+        ulm_chip_mdi_icon_only_icon: mdi:fireplace
+      tap_action:
+        action: call-service
+        service: fan.toggle
+        service_data:
+          entity_id: fan.fireplace
+      hold_action:
+        action: more-info
+    - type: "custom:button-card"
+      template: chip_mdi_icon_only
+      entity: fan.living_room_fan
+      variables:
+        ulm_chip_mdi_icon_only_entity: fan.living_room_fan
+        ulm_chip_mdi_icon_only_icon: mdi:fan
+      tap_action:
+        action: call-service
+        service: fan.toggle
+        service_data:
+          entity_id: fan.living_room_fan
+      hold_action:
+        action: more-info
+    - type: "custom:button-card"
+      template: chip_mdi_icon_only
+      entity: switch.linea_mini_main
+      tap_action:
+        action: call-service
+        service: switch.toggle
+        service_data:
+          entity_id: switch.linea_mini_main
+      hold_action:
+        action: more-info
+      variables:
+        ulm_chip_mdi_icon_only_entity: switch.linea_mini_main
+        ulm_chip_mdi_icon_only_icon: mdi:coffee
+
+        # service: switch.toggle
+        # data: {}
+        # target:
+        #   entity_id: switch.linea_mini_main
+## Climate ###
+- type: vertical-stack
+  cards:
+    - type: "custom:button-card"
+      template: card_graph
+      variables:
+        ulm_card_graph_color: "var(--google-blue)"
+        ulm_card_graph_name: Temperature Inside
+        ulm_card_graph_entity: sensor.average_house_temperature
+        ulm_card_graph_color2: "var(--google-green)"
+        ulm_card_graph_entity2: sensor.essendon_airport_temp
+        ulm_card_graph_type: fill
+        ulm_card_graph_hours: 24
+    - type: horizontal-stack
+      cards:
+        - type: "custom:button-card"
+          template: card_ac_buttons
+          variables:
+            ulm_card_ac_entity: climate.all_heating
+            ulm_card_ac_fan_mode_sensor: sensor.average_house_temperature
+            ulm_card_ac_name: "All Heating"
+        - type: "custom:button-card"
+          template: card_ac_buttons
+          variables:
+            ulm_card_ac_entity: climate.all_cooling
+            ulm_card_ac_fan_mode_sensor: sensor.all_cooling_temperature
+            ulm_card_ac_name: "All Cooling"
+## Lights ##
 - type: vertical-stack
   cards:
     - type: custom:fold-entity-row
@@ -404,136 +474,9 @@
             ulm_card_light_enable_horizontal: true
 - type: vertical-stack
   cards:
-  - type: entities
-    entities:
-      - type: custom:fold-entity-row
-        head:
-          entity: climate.all_heating
-          name: Heating
-          type: custom:slider-entity-row
-          icon: mdi:fire
-          state_color: true
-        show_header_toggle: false
-        entities:
-          - type: custom:slider-entity-row
-            entity: climate.living
-            icon: mdi:fire
-            state_color: true
-          - type: custom:slider-entity-row
-            entity: climate.guest_room
-            icon: mdi:fire
-            state_color: true
-          - type: custom:slider-entity-row
-            entity: climate.kid_s_rooms
-            icon: mdi:fire
-            state_color: true
-          - type: custom:slider-entity-row
-            entity: climate.rumpus
-            icon: mdi:fire
-            state_color: true
-          - type: custom:slider-entity-row
-            entity: climate.master
-            icon: mdi:fire
-            state_color: true
-          - type: custom:slider-entity-row
-            entity: climate.office
-            icon: mdi:fire
-            state_color: true
-      - type: custom:fold-entity-row
-        head:
-          entity: climate.all_cooling
-          name: Cooling
-          type: custom:slider-entity-row
-          icon: mdi:snowflake
-          state_color: true
-        show_header_toggle: false
-        entities:
-          - type: custom:slider-entity-row
-            entity: climate.living_cooling
-            icon: mdi:snowflake
-            state_color: true
-          - type: custom:slider-entity-row
-            entity: climate.master_cooling
-            icon: mdi:snowflake
-            state_color: true
-          - type: custom:slider-entity-row
-            entity: climate.office_cooling
-            icon: mdi:snowflake
-            state_color: true
-      - entity: fan.fireplace
-        state_color: true
-        icon: mdi:fireplace
-      - entity: fan.living_room_fan
-        state_color: true
-      - entity: cover.master_curtains
-        state_color: true
-        icon: mdi:curtains
-    state_color: true
-# - type: vertical-stack
-#   cards:
-#     - type: entities
-#       entities:
-#     - type: custom:fold-entity-row
-#       head:
-#         entity: group.back_yard_sprinklers
-#         name: Sprinklers
-#         icon: mdi:sprinkler-variant
-#         state_color: true
-#       show_header_toggle: false
-#       entities:
-#       - entity: switch.back_yard_front
-#         name: Back Yard (Front)
-#         icon: mdi:sprinkler
-#         state_color: true
-#       - entity: switch.back_yard_rear
-#         name: Back Yard (Rear)
-#         icon: mdi:sprinkler
-#         state_color: true
-#       - entity: input_number.back_yard_all_stations_minutes
-#         name: Minutes
-- type: vertical-stack
-  cards:
-  - type: 'custom:button-card'
-    template: chip_mdi_icon_state
-    entity: group.kids_tv_control
-    label: Kids TV
-    icon: 'mdi:television-box'
-    variables:
-      ulm_chip_mdi_icon_state_entity: group.kids_tv_control
-      ulm_chip_mdi_icon_state_icon: mdi:television-box
-    tap_action:
-      action: call-service
-      service: switch.toggle
-      service_data:
-        entity_id: group.kids_tv_control
-  - type: 'custom:button-card'
-    template: chip_icon_label
-    label: Reset Adaptive Lighting
-    icon: 'mdi:restart'
-    tap_action:
-      action: call-service
-      service: script.turn_on
-      service_data:
-        entity_id: script.reset_adaptive_lighting
-  - type: 'custom:button-card'
-    template: chip_icon_label
-    label: Reset Kids Night Mode
-    icon: 'mdi:restart'
-    tap_action:
-      action: call-service
-      service: script.turn_on
-      service_data:
-        entity_id: script.kids_night_mode
-  - type: 'custom:button-card'
-    template: chip_mdi_icon_state
-    entity: switch.sonos_group
-    label: Sonos Group
-    icon: 'mdi:speaker'
-    variables:
-      ulm_chip_mdi_icon_state_entity: switch.sonos_group
-      ulm_chip_mdi_icon_state_icon: mdi:speaker
-    tap_action:
-      action: call-service
-      service: switch.toggle
-      service_data:
-        entity_id: switch.sonos_group
+    - type: "custom:button-card"
+      template:
+        - card_cover_with_buttons
+      variables:
+        ulm_card_cover_with_buttons_name: "Master Curtains"
+        ulm_card_cover_with_buttons_entity: "cover.master_curtains"

@@ -1,0 +1,39 @@
+---
+### chip_garage ###
+custom_chip_mekenthompson_garage:
+  template:
+    - "chip_mdi_icon_state"
+    - "custom_chip_mekenthompson_garage_language_variables"
+    - "ulm_language_variables"
+  label: |
+    [[[
+      var garage_label = variables.ulm_unknown;
+      if (entity.state == "closed"){
+        var garage_label = variables.custom_chip_mekenthompson_garage_closed;
+      } else if(entity.state == "open"){
+        var garage_label = variables.custom_chip_mekenthompson_garage_open;
+      }
+      return garage_label;
+    ]]]
+  icon: |
+    [[[
+      var garage_icon = "mdi:garage-lock";
+      if (entity.state == "closed"){
+        var garage_icon = "mdi:garage-lock";
+      } else if(entity.state == "open"){
+        var garage_icon = "mdi:garage-open";
+      } 
+      return garage_icon;
+    ]]]
+  styles:
+    icon:
+      - color: |
+          [[[
+            var garage_color = "var(--google-black)";
+            if (entity.state == "closed"){
+              var garage_color = "var(--google-black)";
+            } else if(entity.state == "open"){
+              var garage_color = "var(--google-red)";
+            }
+            return garage_color;
+          ]]]

@@ -1,0 +1,50 @@
+#--------------------------------------#
+# Tab : Header Menu                    #
+#--------------------------------------#
+- type: horizontal-stack
+  cards: !include ui-header-menu.yaml
+#--------------------------------------#
+# Tab : Cards                          #
+#--------------------------------------#
+- type: vertical-stack
+  cards:
+  - type: 'custom:button-card'
+    template: card_media_player_sonos_with_controls
+    variables:
+      ulm_card_media_player_with_controls_name: "Sonos Move"
+      ulm_card_media_player_with_controls_entity: media_player.sonos_move
+- type: vertical-stack
+  cards:
+  - type: 'custom:button-card'
+    template: card_media_player_sonos_with_controls
+    variables:
+      ulm_card_media_player_with_controls_name: "TV Room"
+      ulm_card_media_player_with_controls_entity: media_player.tv_room
+- type: vertical-stack
+  cards:
+  - type: 'custom:button-card'
+    template: card_media_player_sonos_with_controls
+    variables:
+      ulm_card_media_player_with_controls_name: "Living Room"
+      ulm_card_media_player_with_controls_entity: media_player.living_room
+- type: vertical-stack
+  cards:
+  - type: 'custom:button-card'
+    template: card_media_player_sonos_with_controls
+    variables:
+      ulm_card_media_player_with_controls_name: "Rumpus Room"
+      ulm_card_media_player_with_controls_entity: media_player.sonos_move
+- type: vertical-stack
+  cards:
+  - type: 'custom:button-card'
+    template: card_media_player_sonos_with_controls
+    variables:
+      ulm_card_media_player_with_controls_name: "Deck"
+      ulm_card_media_player_with_controls_entity: media_player.deck
+- type: vertical-stack
+  cards:
+  - type: 'custom:button-card'
+    template: card_media_player_sonos_with_controls
+    variables:
+      ulm_card_media_player_with_controls_name: "Garage"
+      ulm_card_media_player_with_controls_entity: media_player.garage

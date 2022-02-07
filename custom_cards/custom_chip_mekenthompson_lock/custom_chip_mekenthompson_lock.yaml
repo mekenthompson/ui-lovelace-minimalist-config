@@ -2,7 +2,7 @@
 ### chip_lock ###
 custom_chip_mekenthompson_lock:
   template:
-    - "chip_icon_label"
+    - "chip_mdi_icon_state"
     - "custom_chip_mekenthompson_lock_language_variables"
     - "ulm_language_variables"
   label: |
@@ -19,7 +19,7 @@ custom_chip_mekenthompson_lock:
     [[[
       var lock_icon = "mdi:lock-outline";
       if (entity.state == "locked"){
-        var lock_icon = "mdi:lock";
+        var lock_icon = "mdi:lock-check";
       } else if(entity.state == "unlocked"){
         var lock_icon = "mdi:lock-open-alert";
       } 
@@ -29,9 +29,9 @@ custom_chip_mekenthompson_lock:
     icon:
       - color: |
           [[[
-            var lock_color = "var(--google-yellow)";
+            var lock_color = "var(--google-black)";
             if (entity.state == "locked"){
-              var lock_color = "var(--google-green)";
+              var lock_color = "var(--google-black)";
             } else if(entity.state == "unlocked"){
               var lock_color = "var(--google-red)";
             }

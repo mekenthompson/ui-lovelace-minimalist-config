@@ -1,0 +1,5 @@
+---
+custom_chip_mekenthompson_garage_language_variables:
+  variables:
+    custom_chip_mekenthompson_garage_closed: "closed"
+    custom_chip_mekenthompson_garage_open: "open"

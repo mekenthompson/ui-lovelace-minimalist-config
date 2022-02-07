@@ -1,0 +1,150 @@
+#--------------------------------------#
+# Tab : Header Menu                    #
+#--------------------------------------#
+- type: horizontal-stack
+  cards: !include ui-header-menu.yaml
+#--------------------------------------#
+# Tab : Cards                          #
+#--------------------------------------#
+- type: vertical-stack
+  cards:
+  - type: 'custom:button-card'
+    template: chip_mdi_icon_state
+    entity: group.kids_tv_control
+    label: Kids TV
+    icon: 'mdi:television-box'
+    variables:
+      ulm_chip_mdi_icon_state_entity: group.kids_tv_control
+      ulm_chip_mdi_icon_state_icon: mdi:television-box
+    tap_action:
+      action: call-service
+      service: switch.toggle
+      service_data:
+        entity_id: group.kids_tv_control
+  - type: 'custom:button-card'
+    template: chip_icon_label
+    label: Reset Adaptive Lighting
+    icon: 'mdi:restart'
+    tap_action:
+      action: call-service
+      service: script.turn_on
+      service_data:
+        entity_id: script.reset_adaptive_lighting
+  - type: 'custom:button-card'
+    template: chip_icon_label
+    label: Reset Kids Night Mode
+    icon: 'mdi:restart'
+    tap_action:
+      action: call-service
+      service: script.turn_on
+      service_data:
+        entity_id: script.kids_night_mode
+  - type: 'custom:button-card'
+    template: chip_mdi_icon_state
+    entity: switch.sonos_group
+    label: Sonos Group
+    icon: 'mdi:speaker'
+    variables:
+      ulm_chip_mdi_icon_state_entity: switch.sonos_group
+      ulm_chip_mdi_icon_state_icon: mdi:speaker
+    tap_action:
+      action: call-service
+      service: switch.toggle
+      service_data:
+        entity_id: switch.sonos_group
+  - type: "custom:button-card"
+    template: chip_icon_only
+    variables:
+      ulm_chip_icon_only: "mdi:home"
+    tap_action:
+      action: "navigate"
+      navigation_path: ../lovelace/dashboard
+- type: vertical-stack
+  cards:
+  - type: entities
+    entities:
+      - type: custom:fold-entity-row
+        head:
+          entity: climate.all_heating
+          name: Heating
+          type: custom:slider-entity-row
+          icon: mdi:fire
+          state_color: true
+        show_header_toggle: false
+        entities:
+          - type: custom:slider-entity-row
+            entity: climate.living
+            icon: mdi:fire
+            state_color: true
+          - type: custom:slider-entity-row
+            entity: climate.guest_room
+            icon: mdi:fire
+            state_color: true
+          - type: custom:slider-entity-row
+            entity: climate.kid_s_rooms
+            icon: mdi:fire
+            state_color: true
+          - type: custom:slider-entity-row
+            entity: climate.rumpus
+            icon: mdi:fire
+            state_color: true
+          - type: custom:slider-entity-row
+            entity: climate.master
+            icon: mdi:fire
+            state_color: true
+          - type: custom:slider-entity-row
+            entity: climate.office
+            icon: mdi:fire
+            state_color: true
+      - type: custom:fold-entity-row
+        head:
+          entity: climate.all_cooling
+          name: Cooling
+          type: custom:slider-entity-row
+          icon: mdi:snowflake
+          state_color: true
+        show_header_toggle: false
+        entities:
+          - type: custom:slider-entity-row
+            entity: climate.living_cooling
+            icon: mdi:snowflake
+            state_color: true
+          - type: custom:slider-entity-row
+            entity: climate.master_cooling
+            icon: mdi:snowflake
+            state_color: true
+          - type: custom:slider-entity-row
+            entity: climate.office_cooling
+            icon: mdi:snowflake
+            state_color: true
+      - entity: fan.fireplace
+        state_color: true
+        icon: mdi:fireplace
+      - entity: fan.living_room_fan
+        state_color: true
+      - entity: cover.master_curtains
+        state_color: true
+        icon: mdi:curtains
+    state_color: true
+# - type: vertical-stack
+#   cards:
+#     - type: entities
+#       entities:
+#     - type: custom:fold-entity-row
+#       head:
+#         entity: group.back_yard_sprinklers
+#         name: Sprinklers
+#         icon: mdi:sprinkler-variant
+#         state_color: true
+#       show_header_toggle: false
+#       entities:
+#       - entity: switch.back_yard_front
+#         name: Back Yard (Front)
+#         icon: mdi:sprinkler
+#         state_color: true
+#       - entity: switch.back_yard_rear
+#         name: Back Yard (Rear)
+#         icon: mdi:sprinkler
+#         state_color: true
+#       - entity: input_number.back_yard_all_stations_minutes
+#         name: Minutes

@@ -10,7 +10,6 @@ views:
   - title: Home
     path: home
     cards: !include ui-home.yaml
-    
   #--------------------------------------#
   # Tab : Lights                         #
   #--------------------------------------#
@@ -18,9 +17,35 @@ views:
     path: lights
     cards: !include ui-lights.yaml
   #--------------------------------------#
-  # Tab : Climate                        #
+  # Tab : Heating                        #
   #--------------------------------------#
-  - title: Climate
-    path: climate
-    cards: !include ui-climate.yaml
+  - title: Heating
+    path: heating
+    cards: !include ui-heating.yaml
+  #--------------------------------------#
+  # Tab : Cooling                        #
+  #--------------------------------------#
+  - title: Cooling
+    path: cooling
+    cards: !include ui-cooling.yaml
+  #--------------------------------------#
+  # Tab : Audio                          #
+  #--------------------------------------#
+  - title: Audio
+    path: audio
+    cards: !include ui-audio.yaml
+  #--------------------------------------#
+  # Tab : TV                             #
+  #--------------------------------------#
+  - title: TV
+    path: tv
+    cards: !include ui-tv.yaml
+  #--------------------------------------#
+  # Tab : Automation                        #
+  #--------------------------------------#
+  - title: Automation
+    path: automation
+    cards: !include ui-automation.yaml
+
+    
 #sample icons ☑️💡⚡ 🔥  🏠🌳

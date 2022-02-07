@@ -1,0 +1,147 @@
+---
+#--------------------------------------#
+# Tab : Header Menu                    #
+#--------------------------------------#
+- type: horizontal-stack
+  cards: !include ui-header-menu.yaml
+#--------------------------------------#
+# Tab : Cards                          #
+#--------------------------------------#
+- type: vertical-stack
+  cards:
+    - type: "custom:button-card"
+      template: card_title
+      name: Heating
+      label:
+    - type: "custom:button-card"
+      template: card_weather
+      entity: weather.ascot_vale
+      variables:
+        ulm_card_weather_name: " "
+        ulm_card_weather_primary_info:
+          - wind_speed
+          - precipitation_probability
+        ulm_card_weather_backdrop:
+          fade: true
+- type: vertical-stack
+  cards:
+    - type: "custom:button-card"
+      template: card_graph
+      variables:
+        ulm_card_graph_color: "var(--google-red)"
+        ulm_card_graph_name: Average Temp
+        ulm_card_graph_entity: sensor.average_house_temperature
+        ulm_card_graph_type: fill
+        ulm_card_graph_hours: 24
+    - type: 'custom:button-card'
+      template: card_ac_buttons
+      variables:
+        ulm_card_ac_entity: climate.all_heating
+        ulm_card_ac_fan_mode_sensor: sensor.average_house_temperature
+        ulm_card_ac_name: 'All Heating'
+    - type: horizontal-stack
+      cards:
+        - type: "custom:button-card"
+          template: card_graph
+          variables:
+            ulm_card_graph_color: "var(--google-red)"
+            ulm_card_graph_name: Living
+            ulm_card_graph_entity: sensor.living_temperature
+            ulm_card_graph_type: fill
+            ulm_card_graph_hours: 24
+        - type: 'custom:button-card'
+          template: card_ac_buttons
+          variables:
+            ulm_card_ac_entity: climate.living
+            ulm_card_ac_fan_mode_sensor: sensor.living_temperature
+            ulm_card_ac_name: 'Living'
+- type: vertical-stack
+  cards:
+    - type: horizontal-stack
+      cards:
+        - type: "custom:button-card"
+          template: card_graph
+          variables:
+            ulm_card_graph_color: "var(--google-red)"
+            ulm_card_graph_name: Guest Room
+            ulm_card_graph_entity: sensor.guest_room_temperature
+            ulm_card_graph_type: fill
+            ulm_card_graph_hours: 24
+        - type: 'custom:button-card'
+          template: card_ac_buttons
+          variables:
+            ulm_card_ac_entity: climate.guest_room
+            ulm_card_ac_fan_mode_sensor: sensor.guest_room_temperature
+            ulm_card_ac_name: 'Guest Room'
+- type: vertical-stack
+  cards:
+    - type: horizontal-stack
+      cards:
+        - type: "custom:button-card"
+          template: card_graph
+          variables:
+            ulm_card_graph_color: "var(--google-red)"
+            ulm_card_graph_name: Kid's Rooms
+            ulm_card_graph_entity: sensor.kids_rooms_temperature
+            ulm_card_graph_type: fill
+            ulm_card_graph_hours: 24
+        - type: 'custom:button-card'
+          template: card_ac_buttons
+          variables:
+            ulm_card_ac_entity: climate.kid_s_rooms
+            ulm_card_ac_fan_mode_sensor: sensor.kids_rooms_temperature
+            ulm_card_ac_name: "Kid's Rooms"
+- type: vertical-stack
+  cards:
+    - type: horizontal-stack
+      cards:
+        - type: "custom:button-card"
+          template: card_graph
+          variables:
+            ulm_card_graph_color: "var(--google-red)"
+            ulm_card_graph_name: Rumpus
+            ulm_card_graph_entity: sensor.rumpus_temperature
+            ulm_card_graph_type: fill
+            ulm_card_graph_hours: 24
+        - type: 'custom:button-card'
+          template: card_ac_buttons
+          variables:
+            ulm_card_ac_entity: climate.rumpus
+            ulm_card_ac_fan_mode_sensor: sensor.rumpus_temperature
+            ulm_card_ac_name: "Rumpus"
+- type: vertical-stack
+  cards:
+    - type: horizontal-stack
+      cards:
+        - type: "custom:button-card"
+          template: card_graph
+          variables:
+            ulm_card_graph_color: "var(--google-red)"
+            ulm_card_graph_name: Master
+            ulm_card_graph_entity: sensor.master_temperature
+            ulm_card_graph_type: fill
+            ulm_card_graph_hours: 24
+        - type: 'custom:button-card'
+          template: card_ac_buttons
+          variables:
+            ulm_card_ac_entity: climate.master
+            ulm_card_ac_fan_mode_sensor: sensor.master_temperature
+            ulm_card_ac_name: "Master"
+- type: vertical-stack
+  cards:
+    - type: horizontal-stack
+      cards:
+        - type: "custom:button-card"
+          template: card_graph
+          variables:
+            ulm_card_graph_color: "var(--google-red)"
+            ulm_card_graph_name: Office
+            ulm_card_graph_entity: sensor.office_temperature
+            ulm_card_graph_type: fill
+            ulm_card_graph_hours: 24
+        - type: 'custom:button-card'
+          template: card_ac_buttons
+          variables:
+            ulm_card_ac_entity: climate.office
+            ulm_card_ac_fan_mode_sensor: sensor.office_temperature
+            ulm_card_ac_name: "Office"
