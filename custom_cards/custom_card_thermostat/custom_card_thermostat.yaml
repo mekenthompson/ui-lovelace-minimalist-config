@@ -179,7 +179,7 @@ custom_card_thermostat:
                 - operator: "template"
                   value: >
                     [[[
-                      return entity.state != 'off'
+                      return (entity.attributes.hvac_action == 'cooling' || entity.attributes.hvac_action == 'heating')
                     ]]]
                   styles:
                     icon:
