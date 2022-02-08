@@ -34,11 +34,13 @@
         ulm_card_graph_type: fill
         ulm_card_graph_hours: 24
     - type: 'custom:button-card'
-      template: card_ac_buttons
+      template: custom_card_thermostat
+      entity: climate.all_heating
       variables:
-        ulm_card_ac_entity: climate.all_heating
-        ulm_card_ac_fan_mode_sensor: sensor.average_house_temperature
-        ulm_card_ac_name: 'All Heating'
+        ulm_card_thermostat_enable_popup: true
+        ulm_card_thermostat_enable_collapse: false
+        ulm_card_thermostat_enable_controls: true
+        ulm_card_thermostat_enable_hvac_modes: false
     - type: horizontal-stack
       cards:
         - type: "custom:button-card"
@@ -50,11 +52,13 @@
             ulm_card_graph_type: fill
             ulm_card_graph_hours: 24
         - type: 'custom:button-card'
-          template: card_ac_buttons
+          template: custom_card_thermostat
+          entity: climate.living
           variables:
-            ulm_card_ac_entity: climate.living
-            ulm_card_ac_fan_mode_sensor: sensor.living_temperature
-            ulm_card_ac_name: 'Living'
+            ulm_card_thermostat_enable_popup: true
+            ulm_card_thermostat_enable_collapse: false
+            ulm_card_thermostat_enable_controls: true
+            ulm_card_thermostat_enable_hvac_modes: false
 - type: vertical-stack
   cards:
     - type: horizontal-stack
@@ -68,11 +72,13 @@
             ulm_card_graph_type: fill
             ulm_card_graph_hours: 24
         - type: 'custom:button-card'
-          template: card_ac_buttons
+          template: custom_card_thermostat
+          entity: climate.guest_room
           variables:
-            ulm_card_ac_entity: climate.guest_room
-            ulm_card_ac_fan_mode_sensor: sensor.guest_room_temperature
-            ulm_card_ac_name: 'Guest Room'
+            ulm_card_thermostat_enable_popup: true
+            ulm_card_thermostat_enable_collapse: false
+            ulm_card_thermostat_enable_controls: true
+            ulm_card_thermostat_enable_hvac_modes: false
 - type: vertical-stack
   cards:
     - type: horizontal-stack
@@ -86,11 +92,13 @@
             ulm_card_graph_type: fill
             ulm_card_graph_hours: 24
         - type: 'custom:button-card'
-          template: card_ac_buttons
+          template: custom_card_thermostat
+          entity: climate.kid_s_rooms
           variables:
-            ulm_card_ac_entity: climate.kid_s_rooms
-            ulm_card_ac_fan_mode_sensor: sensor.kids_rooms_temperature
-            ulm_card_ac_name: "Kid's Rooms"
+            ulm_card_thermostat_enable_popup: true
+            ulm_card_thermostat_enable_collapse: false
+            ulm_card_thermostat_enable_controls: true
+            ulm_card_thermostat_enable_hvac_modes: false
 - type: vertical-stack
   cards:
     - type: horizontal-stack
@@ -104,11 +112,13 @@
             ulm_card_graph_type: fill
             ulm_card_graph_hours: 24
         - type: 'custom:button-card'
-          template: card_ac_buttons
+          template: custom_card_thermostat
+          entity: climate.rumpus
           variables:
-            ulm_card_ac_entity: climate.rumpus
-            ulm_card_ac_fan_mode_sensor: sensor.rumpus_temperature
-            ulm_card_ac_name: "Rumpus"
+            ulm_card_thermostat_enable_popup: true
+            ulm_card_thermostat_enable_collapse: false
+            ulm_card_thermostat_enable_controls: true
+            ulm_card_thermostat_enable_hvac_modes: false
 - type: vertical-stack
   cards:
     - type: horizontal-stack
@@ -122,11 +132,13 @@
             ulm_card_graph_type: fill
             ulm_card_graph_hours: 24
         - type: 'custom:button-card'
-          template: card_ac_buttons
+          template: custom_card_thermostat
+          entity: climate.master
           variables:
-            ulm_card_ac_entity: climate.master
-            ulm_card_ac_fan_mode_sensor: sensor.master_temperature
-            ulm_card_ac_name: "Master"
+            ulm_card_thermostat_enable_popup: true
+            ulm_card_thermostat_enable_collapse: false
+            ulm_card_thermostat_enable_controls: true
+            ulm_card_thermostat_enable_hvac_modes: false
 - type: vertical-stack
   cards:
     - type: horizontal-stack
@@ -140,8 +152,10 @@
             ulm_card_graph_type: fill
             ulm_card_graph_hours: 24
         - type: 'custom:button-card'
-          template: card_ac_buttons
+          template: custom_card_thermostat
+          entity: climate.office
           variables:
-            ulm_card_ac_entity: climate.office
-            ulm_card_ac_fan_mode_sensor: sensor.office_temperature
-            ulm_card_ac_name: "Office"
+            ulm_card_thermostat_enable_popup: true
+            ulm_card_thermostat_enable_collapse: false
+            ulm_card_thermostat_enable_controls: true
+            ulm_card_thermostat_enable_hvac_modes: false

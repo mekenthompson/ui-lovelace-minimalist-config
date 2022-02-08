@@ -132,17 +132,21 @@
     - type: horizontal-stack
       cards:
         - type: "custom:button-card"
-          template: card_ac_buttons
+          template: custom_card_thermostat
+          entity: climate.all_heating
           variables:
-            ulm_card_ac_entity: climate.all_heating
-            ulm_card_ac_fan_mode_sensor: sensor.average_house_temperature
-            ulm_card_ac_name: "All Heating"
+            ulm_card_thermostat_enable_popup: true
+            ulm_card_thermostat_enable_collapse: false
+            ulm_card_thermostat_enable_controls: true
+            ulm_card_thermostat_enable_hvac_modes: false
         - type: "custom:button-card"
-          template: card_ac_buttons
+          template: custom_card_thermostat
+          entity: climate.all_cooling
           variables:
-            ulm_card_ac_entity: climate.all_cooling
-            ulm_card_ac_fan_mode_sensor: sensor.all_cooling_temperature
-            ulm_card_ac_name: "All Cooling"
+            ulm_card_thermostat_enable_popup: true
+            ulm_card_thermostat_enable_collapse: false
+            ulm_card_thermostat_enable_controls: true
+            ulm_card_thermostat_enable_hvac_modes: false
 ## Lights ##
 - type: vertical-stack
   cards:
