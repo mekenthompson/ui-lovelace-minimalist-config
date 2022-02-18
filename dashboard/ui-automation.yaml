@@ -6,79 +6,208 @@
 #--------------------------------------#
 # Tab : Cards                          #
 #--------------------------------------#
-- type: vertical-stack
+- type: "custom:button-card"
+  template: card_title
+  name: Automation
+  label: Vacuums
+- type: horizontal-stack
   cards:
-  - type: 'custom:button-card'
-    template: chip_mdi_icon_state
-    entity: group.kids_tv_control
-    label: Kids TV
-    icon: 'mdi:television-box'
-    variables:
-      ulm_chip_mdi_icon_state_entity: group.kids_tv_control
-      ulm_chip_mdi_icon_state_icon: mdi:television-box
-    tap_action:
-      action: call-service
-      service: switch.toggle
-      service_data:
-        entity_id: group.kids_tv_control
-  - type: 'custom:button-card'
-    template: chip_mdi_icon_state
-    label: Reset Adaptive Lighting
-    icon: 'mdi:restart'
-    tap_action:
-      action: call-service
-      service: script.turn_on
-      service_data:
-        entity_id: script.reset_adaptive_lighting
-  - type: 'custom:button-card'
-    template: chip_mdi_icon_state
-    label: Reset Kids Night Mode
-    icon: 'mdi:restart'
-    tap_action:
-      action: call-service
-      service: script.turn_on
-      service_data:
-        entity_id: script.kids_night_mode
-  - type: 'custom:button-card'
-    template: chip_mdi_icon_state
-    entity: switch.sonos_group
-    label: Sonos Group
-    icon: 'mdi:speaker'
-    variables:
-      ulm_chip_mdi_icon_state_entity: switch.sonos_group
-      ulm_chip_mdi_icon_state_icon: mdi:speaker
-    tap_action:
-      action: call-service
-      service: switch.toggle
-      service_data:
-        entity_id: switch.sonos_group
   - type: "custom:button-card"
-    template: chip_navigate
+    template: "card_vacuum"
+    entity: vacuum.deebot
+  - type: "custom:button-card"
+    template: "card_vacuum"
+    entity: vacuum.roomba
+#--------------------------------------#
+# Section : Sprinklers                 #
+#--------------------------------------#
+- type: "custom:button-card"
+  template: card_title
+  name: 
+  label: Sprinklers
+- type: custom:fold-entity-row
+  head:
+    type: 'custom:button-card'
+    template: card_power_outlet
     variables:
-      ulm_chip_navigate_icon: "mdi:home"
-      ulm_chip_navigate_path: ../lovelace/dashboard
-    tap_action:
-      action: "navigate"
-      navigation_path: ../lovelace/dashboard
-- type: vertical-stack
-  cards:
-    - type: entities
-      entities:
-        - type: custom:fold-entity-row
-          head:
-            entity: group.back_yard_sprinklers
-            name: Sprinklers
-            icon: mdi:sprinkler-variant
-            state_color: true
-          show_header_toggle: false
-          entities:
-          - entity: switch.back_yard_front
-            name: Back Yard (Front)
-            icon: mdi:sprinkler
-            state_color: true
-          - entity: switch.back_yard_rear
-            name: Back Yard (Rear)
-            icon: mdi:sprinkler
-            state_color: true
-          - entity: input_number.back_yard_all_stations_minutes
-            name: Minutes
+      ulm_card_power_outlet_consumption_sensor: sensor.ff424023004b1200_speed
+    entity: group.back_yard_sprinklers
+    name: Back Yard Sprinklers
+  show_header_toggle: false
+  entities:
+    - type: "custom:button-card"
+      template:
+        - card_input_number
+      variables:
+        ulm_card_input_number_name: "Sprinkler Minutes"
+        ulm_card_input_number_entity: input_number.back_yard_all_stations_minutes
+- type: "custom:button-card"
+  template: card_title
+  name: 
+  label: Curtains
+- type: "custom:button-card"
+  template:
+    - card_cover_buttons
+  variables:
+    ulm_card_cover_buttons_name: "Master Curtains"
+    ulm_card_cover_buttons_entity: "cover.master_curtains"
+#--------------------------------------#
+# Section : Helper Scripts             #
+#--------------------------------------#
+- type: "custom:button-card"
+  template: card_title
+  name: 
+  label: Helper Scripts
+- type: "custom:mod-card"
+  style:
+    .: |
+      ha-card {
+        # background-color: var(--card-background-color);
+        # border-radius: var(--border-radius);
+        # padding: 5px 10px;
+      }
+    hui-horizontal-stack-card$: |
+      #root {
+        justify-content: space-between;
+      }
+  card:
+    type: horizontal-stack
+    cards:
+    - type: 'custom:button-card'
+      template: custom_chip_mekenthompson_mdi_icon_state
+      entity: group.kids_tv_control
+      label: Kids TV
+      variables:
+        ulm_chip_mdi_icon_state_entity: group.kids_tv_control
+        ulm_chip_mdi_icon_state_icon: mdi:television-box
+      tap_action:
+        action: call-service
+        service: switch.toggle
+        service_data:
+          entity_id: group.kids_tv_control
+    - type: 'custom:button-card'
+      template: custom_chip_mekenthompson_mdi_icon_state
+      entity: switch.sonos_group
+      label: Sonos Group
+      icon: 'mdi:speaker'
+      variables:
+        ulm_chip_mdi_icon_state_entity: switch.sonos_group
+        ulm_chip_mdi_icon_state_icon: mdi:speaker
+      tap_action:
+        action: call-service
+        service: switch.toggle
+        service_data:
+          entity_id: switch.sonos_group
+    - type: 'custom:button-card'
+      template: custom_chip_mekenthompson_mdi_icon_state
+      entity: script.kids_night_mode
+      label: Night Mode
+      variables:
+        ulm_chip_mdi_icon_state_entity: script.kids_night_mode
+        ulm_chip_mdi_icon_state_icon: mdi:restart
+      tap_action:
+        action: call-service
+        service: script.turn_on
+        service_data:
+          entity_id: script.kids_night_mode
+- type: "custom:mod-card"
+  style:
+    .: |
+      ha-card {
+        # background-color: var(--card-background-color);
+        # border-radius: var(--border-radius);
+        # padding: 5px 10px;
+      }
+    hui-horizontal-stack-card$: |
+      #root {
+        justify-content: space-between;
+      }
+  card:
+    type: horizontal-stack
+    cards:
+    - type: 'custom:button-card'
+      template: custom_chip_mekenthompson_mdi_icon_state
+      label: Adaptive Lights
+      entity: script.reset_adaptive_lighting
+      variables:
+        ulm_chip_mdi_icon_state_icon: mdi:restart
+        ulm_chip_mdi_icon_state_entity: script.reset_adaptive_lighting
+      tap_action:
+        action: call-service
+        service: script.turn_on
+        service_data:
+          entity_id: script.reset_adaptive_lighting
+    - type: 'custom:button-card'
+      template: custom_chip_mekenthompson_mdi_icon_state
+      label: Switches
+      entity: script.unifi_reset_switches
+      variables:
+        ulm_chip_mdi_icon_state_icon: mdi:restart
+        ulm_chip_mdi_icon_state_entity: script.unifi_reset_switches
+      tap_action:
+        action: call-service
+        service: script.turn_on
+        service_data:
+          entity_id: script.unifi_reset_switches
+    - type: 'custom:button-card'
+      template: custom_chip_mekenthompson_mdi_icon_state
+      label: Lights
+      entity: script.unifi_reset_lights
+      variables:
+        ulm_chip_mdi_icon_state_icon: mdi:restart
+        ulm_chip_mdi_icon_state_entity: script.unifi_reset_lights
+      tap_action:
+        action: call-service
+        service: script.turn_on
+        service_data:
+          entity_id: script.unifi_reset_lights
+#--------------------------------------#
+# Section : Navigation                 #
+#--------------------------------------#
+- type: "custom:button-card"
+  template: card_title
+  name: 
+  label: Navigation
+- type: "custom:mod-card"
+  style:
+    .: |
+      ha-card {
+        # background-color: var(--card-background-color);
+        # border-radius: var(--border-radius);
+        # padding: 5px 10px;
+      }
+    hui-horizontal-stack-card$: |
+      #root {
+        justify-content: space-between;
+      }
+  card:
+    type: horizontal-stack
+    cards:
+    - type: "custom:button-card"
+      template: chip_navigate
+      label: Configuration
+      variables:
+        ulm_chip_navigate_icon: "mdi:cog"
+        ulm_chip_navigate_path: ../profile
+      tap_action:
+        action: "navigate"
+        navigation_path: ../config/dashboard
+    - type: "custom:button-card"
+      template: chip_navigate
+      label: Profile
+      variables:
+        ulm_chip_navigate_icon: "mdi:human"
+        ulm_chip_navigate_path: ../profile
+      tap_action:
+        action: "navigate"
+        navigation_path: ../profile
+    - type: "custom:button-card"
+      template: chip_navigate
+      label: "Lovelace Home"
+      variables:
+        ulm_chip_navigate_icon: "mdi:home"
+        ulm_chip_navigate_path: ../lovelace/dashboard
+      tap_action:
+        action: "navigate"
+        navigation_path: ../lovelace/dashboard
+

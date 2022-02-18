@@ -7,22 +7,20 @@
 #--------------------------------------#
 # Tab : Cards                          #
 #--------------------------------------#
-- type: vertical-stack
-  cards:
-    - type: "custom:button-card"
-      template: card_title
-      name: Heating
-      label:
-    - type: "custom:button-card"
-      template: card_weather
-      entity: weather.ascot_vale
-      variables:
-        ulm_card_weather_name: " "
-        ulm_card_weather_primary_info:
-          - wind_speed
-          - precipitation_probability
-        ulm_card_weather_backdrop:
-          fade: true
+- type: "custom:button-card"
+  template: card_title
+  name: Heating
+  label:
+#     - type: "custom:button-card"
+#       template: card_weather
+#       entity: weather.ascot_vale
+#       variables:
+#         ulm_card_weather_name: " "
+#         ulm_card_weather_primary_info:
+#           - wind_speed
+#           - precipitation_probability
+#         ulm_card_weather_backdrop:
+#           fade: true
 - type: vertical-stack
   cards:
     - type: "custom:button-card"
@@ -34,7 +32,7 @@
         ulm_card_graph_type: fill
         ulm_card_graph_hours: 24
     - type: 'custom:button-card'
-      template: custom_card_thermostat
+      template: card_thermostat
       entity: climate.all_heating
       variables:
         ulm_card_thermostat_enable_popup: true
@@ -52,7 +50,7 @@
             ulm_card_graph_type: fill
             ulm_card_graph_hours: 24
         - type: 'custom:button-card'
-          template: custom_card_thermostat
+          template: card_thermostat
           entity: climate.living
           variables:
             ulm_card_thermostat_enable_popup: true
@@ -72,7 +70,7 @@
             ulm_card_graph_type: fill
             ulm_card_graph_hours: 24
         - type: 'custom:button-card'
-          template: custom_card_thermostat
+          template: card_thermostat
           entity: climate.guest_room
           variables:
             ulm_card_thermostat_enable_popup: true
@@ -92,7 +90,7 @@
             ulm_card_graph_type: fill
             ulm_card_graph_hours: 24
         - type: 'custom:button-card'
-          template: custom_card_thermostat
+          template: card_thermostat
           entity: climate.kid_s_rooms
           variables:
             ulm_card_thermostat_enable_popup: true
@@ -112,7 +110,7 @@
             ulm_card_graph_type: fill
             ulm_card_graph_hours: 24
         - type: 'custom:button-card'
-          template: custom_card_thermostat
+          template: card_thermostat
           entity: climate.rumpus
           variables:
             ulm_card_thermostat_enable_popup: true
@@ -132,7 +130,7 @@
             ulm_card_graph_type: fill
             ulm_card_graph_hours: 24
         - type: 'custom:button-card'
-          template: custom_card_thermostat
+          template: card_thermostat
           entity: climate.master
           variables:
             ulm_card_thermostat_enable_popup: true
@@ -152,7 +150,7 @@
             ulm_card_graph_type: fill
             ulm_card_graph_hours: 24
         - type: 'custom:button-card'
-          template: custom_card_thermostat
+          template: card_thermostat
           entity: climate.office
           variables:
             ulm_card_thermostat_enable_popup: true

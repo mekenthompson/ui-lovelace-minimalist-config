@@ -6,66 +6,23 @@
 #--------------------------------------#
 # Tab : Cards                          #
 #--------------------------------------#
-- type: vertical-stack
-  cards:
-  - type: 'custom:button-card'
-    template: 
-      - card_media_player
-      - popup_media_player
-    entity: media_player.living_room_shield
-    name: Living Room TV
-  - type: 'custom:button-card'
-    template: 
-      - card_media_player
-      - popup_media_player
-    entity: media_player.living_room_shield
-    name: Living Room TV
-  - type: 'custom:button-card'
-    template: card_media_player_with_control
-    entity: media_player.kids_shield
-    name: Kids TV
-- type: vertical-stack
-  cards:
-    - type: "custom:button-card"
-      template: card_graph
-      variables:
-        ulm_card_graph_color: "var(--google-blue)"
-        ulm_card_graph_name: Essendon (inside avg)
-        ulm_card_graph_entity: sensor.essendon_airport_temp
-        ulm_card_graph_color2: "var(--google-green)"
-        ulm_card_graph_entity2: sensor.average_house_temperature
-        ulm_card_graph_type: fill
-        ulm_card_graph_hours: 24
-    - type: "custom:button-card"
-      template: card_graph
-      variables:
-        ulm_card_graph_color: "var(--google-blue)"
-        ulm_card_graph_name: Flipped Graph
-        ulm_card_graph_entity: sensor.average_house_temperature
-        ulm_card_graph_color2: "var(--google-green)"
-        ulm_card_graph_entity2: sensor.essendon_airport_temp
-        ulm_card_graph_type: fill
-        ulm_card_graph_hours: 24
-    - type: "custom:button-card"
-      template: card_graph
-      variables:
-        ulm_card_graph_color: "var(--google-blue)"
-        ulm_card_graph_name: Tado Avg outdoor (inside avg)
-        ulm_card_graph_entity: sensor.1_harold_outdoor_temperature
-        ulm_card_graph_color2: "var(--google-green)"
-        ulm_card_graph_entity2: sensor.average_house_temperature
-        ulm_card_graph_type: fill
-        ulm_card_graph_hours: 24
-    - type: "custom:button-card"
-      template: card_graph
-      variables:
-        ulm_card_graph_color: "var(--google-blue)"
-        ulm_card_graph_name: Essendon feels like (inside avg)
-        ulm_card_graph_entity: sensor.essendon_airport_temp_feels_like
-        ulm_card_graph_color2: "var(--google-green)"
-        ulm_card_graph_entity2: sensor.average_house_temperature
-        ulm_card_graph_type: fill
-        ulm_card_graph_hours: 24
+- type: "custom:button-card"
+  template: card_title
+  name: TV
+  label:
+- type: 'custom:button-card'
+  template: 
+    - card_media_player_controls
+  variables:
+    ulm_card_media_player_controls_name: "Living Room Shield"
+    ulm_card_media_player_controls_entity: media_player.the_tv
+- type: 'custom:button-card'
+  template:
+    - card_media_player_controls
+  variables:
+    ulm_card_media_player_controls_name: "Kids Shield"
+    ulm_card_media_player_controls_entity: media_player.kids_shield
+
 
 
 

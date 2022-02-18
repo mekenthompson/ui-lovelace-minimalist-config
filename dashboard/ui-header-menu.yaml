@@ -2,52 +2,78 @@
 #--------------------------------------#
 # Tab : Header Menu                    #
 #--------------------------------------#
-- type: "custom:button-card"
-  template: chip_icon_only
-  variables:
-    ulm_chip_icon_only: "🏠"
-  tap_action:
-    action: "navigate"
-    navigation_path: home
-- type: "custom:button-card"
-  template: chip_icon_only
-  variables:
-    ulm_chip_icon_only: "💡"
-  tap_action:
-    action: "navigate"
-    navigation_path: lights
-- type: "custom:button-card"
-  template: chip_icon_only
-  variables:
-    ulm_chip_icon_only: "🔥"
-  tap_action:
-    action: "navigate"
-    navigation_path: heating
-- type: "custom:button-card"
-  template: chip_icon_only
-  variables:
-    ulm_chip_icon_only: "❄️"
-  tap_action:
-    action: "navigate"
-    navigation_path: cooling
-- type: "custom:button-card"
-  template: chip_icon_only
-  variables:
-    ulm_chip_icon_only: "🔉"
-  tap_action:
-    action: "navigate"
-    navigation_path: audio
-- type: "custom:button-card"
-  template: chip_icon_only
-  variables:
-    ulm_chip_icon_only: "📺"
-  tap_action:
-    action: "navigate"
-    navigation_path: tv
-- type: "custom:button-card"
-  template: chip_icon_only
-  variables:
-    ulm_chip_icon_only: "🚀"
-  tap_action:
-    action: "navigate"
-    navigation_path: automation
+  - type: "custom:mod-card"
+    style:
+      .: |
+        ha-card {
+          # background-color: var(--card-background-color);
+          # border-radius: var(--border-radius);
+          # padding: 5px 10px;
+        }
+      hui-horizontal-stack-card$: |
+        #root {
+          justify-content: space-between;
+        }
+    card:
+      type: horizontal-stack
+      cards:
+      # - type: "custom:button-card"
+      #   color_type: blank-card
+      - type: "custom:button-card"
+        template: chip_icon_only
+        variables:
+          ulm_chip_icon_only: "🏠"
+        tap_action:
+          action: "navigate"
+          navigation_path: home
+      - type: "custom:button-card"
+        template: chip_icon_only
+        variables:
+          ulm_chip_icon_only: "💡"
+        tap_action:
+          action: "navigate"
+          navigation_path: lights
+      - type: "custom:button-card"
+        template: chip_icon_only
+        variables:
+          ulm_chip_icon_only: "🔥"
+        tap_action:
+          action: "navigate"
+          navigation_path: heating
+      - type: "custom:button-card"
+        template: chip_icon_only
+        variables:
+          ulm_chip_icon_only: "❄️"
+        tap_action:
+          action: "navigate"
+          navigation_path: cooling
+      - type: "custom:button-card"
+        template: chip_icon_only
+        variables:
+          ulm_chip_icon_only: "🔉"
+        tap_action:
+          action: "navigate"
+          navigation_path: audio
+      - type: "custom:button-card"
+        template: chip_icon_only
+        variables:
+          ulm_chip_icon_only: "📺"
+        tap_action:
+          action: "navigate"
+          navigation_path: tv
+      - type: "custom:button-card"
+        template: chip_icon_only
+        variables:
+          ulm_chip_icon_only: "🔋"
+        tap_action:
+          action: "navigate"
+          navigation_path: sensors
+      - type: "custom:button-card"
+        template: chip_icon_only
+        variables:
+          ulm_chip_icon_only: "🚀"
+        tap_action:
+          action: "navigate"
+          navigation_path: automation
+      # - type: "custom:button-card"
+      #   color_type: blank-card

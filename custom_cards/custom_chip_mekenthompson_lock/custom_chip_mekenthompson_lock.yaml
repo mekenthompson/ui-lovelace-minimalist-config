@@ -33,7 +33,7 @@ custom_chip_mekenthompson_lock:
             if (entity.state == "locked"){
               var lock_color = "var(--google-black)";
             } else if(entity.state == "unlocked"){
-              var lock_color = "var(--google-red)";
+              var lock_color = "var(--google-yellow)";
             }
             return lock_color;
           ]]]

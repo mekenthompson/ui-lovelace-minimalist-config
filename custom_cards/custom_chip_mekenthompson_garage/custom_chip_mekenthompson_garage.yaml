@@ -30,10 +30,10 @@ custom_chip_mekenthompson_garage:
       - color: |
           [[[
             var garage_color = "var(--google-black)";
-            if (entity.state == "closed"){
+            if (entity.state == "off"){
               var garage_color = "var(--google-black)";
-            } else if(entity.state == "open"){
-              var garage_color = "var(--google-red)";
+            } else if(entity.state == "on"){
+              var garage_color = "var(--google-yellow)";
             }
             return garage_color;
           ]]]

@@ -1,0 +1,92 @@
+#--------------------------------------#
+# Tab : Header Menu                    #
+#--------------------------------------#
+- type: horizontal-stack
+  cards: !include ui-header-menu.yaml
+#--------------------------------------#
+# Tab : Cards                          #
+#--------------------------------------#
+- type: "custom:button-card"
+  template: "card_title"
+  name: "Batteries"
+  label: "Charge < 40%"
+- type: "custom:auto-entities"
+  card:
+    type: "grid"
+    columns: 2
+    square: false
+  card_param: "cards"
+  sort:
+    method: state
+    reverse: false
+  filter:
+    include:
+      - domain: sensor
+        attributes:
+          device_class: battery
+        state: '<=40'
+        options:
+          type: "custom:button-card"
+          template: "card_battery"
+          variables:
+            ulm_card_battery_battery_state_entity_id: "this.entity_id"
+            ulm_card_battery_battery_level_danger: 15
+            ulm_card_battery_battery_level_warning: 30
+        sort:
+          method: state
+          reverse: true
+- type: "custom:button-card"
+  template: "card_title"
+  name: "Motion Sensors"
+  label: "Activated in last 10 minutes"
+- type: "custom:auto-entities"
+  card:
+    type: "grid"
+    columns: 2
+    square: false
+  card_param: "cards"
+  sort:
+    method: last_changed
+    reverse: true
+  filter:
+    include:
+      - name: /[Mm]otion/
+        domain: group
+        options:
+          type: "custom:button-card"
+          template: "card_binary_sensor_alert"
+          variables:
+            - ulm_card_binary_sensor_alert: true
+        last_changed: '<10'
+      - domain: binary_sensor
+        attributes:
+          device_class: motion
+        last_changed: '<10'
+        options:
+          type: "custom:button-card"
+          template: "card_binary_sensor_alert"
+          variables:
+            - ulm_card_binary_sensor_alert: true
+- type: "custom:button-card"
+  template: "card_title"
+  name: "Contact Sensors"
+  label: "Open"
+- type: "custom:auto-entities"
+  card:
+    type: "grid"
+    columns: 2
+    square: false
+  card_param: "cards"
+  sort:
+    reverse: true
+  filter:
+    include:
+      - domain: binary_sensor
+        attributes:
+          device_class: opening
+        state: 'on'
+        options:
+          type: "custom:button-card"
+          template: "card_binary_sensor_alert"
+          variables:
+            - ulm_card_binary_sensor_alert: true

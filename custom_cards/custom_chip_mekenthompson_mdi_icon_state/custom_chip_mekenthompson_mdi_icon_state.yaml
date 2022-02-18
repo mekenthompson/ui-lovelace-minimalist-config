@@ -1,0 +1,19 @@
+---
+### chip_mdi_icon with color on state change ###
+custom_chip_mekenthompson_mdi_icon_state:
+  template:
+    - "chip_mdi_icon_state"
+    - "custom_chip_mekenthompson_mdi_icon_state_language_variables"
+    - "ulm_language_variables"
+  styles:
+    icon:
+      - color: |
+          [[[
+            var icon_color = "var(--google-black)";
+            if (entity.state == "off"){
+              var icon_color = "var(--google-black)";
+            } else if(entity.state == "on"){
+              var icon_color = "var(--google-yellow)";
+            }
+            return icon_color;
+          ]]]

@@ -53,6 +53,14 @@ views:
 #    theme: "minimalist-desktop"
     cards: !include ui-tv.yaml
   #--------------------------------------#
+  # Tab : Sensors                        #
+  #--------------------------------------#
+  - title: Sensors
+    path: sensors
+    icon: "mdi:battery"
+#    theme: "minimalist-desktop"
+    cards: !include ui-sensors.yaml
+  #--------------------------------------#
   # Tab : Automation                        #
   #--------------------------------------#
   - title: Automation
@@ -60,6 +68,12 @@ views:
     icon: "mdi:rocket-launch"
 #    theme: "minimalist-desktop"
     cards: !include ui-automation.yaml
-
-    
+#   #--------------------------------------#
+#   # Tab : Example                        #
+#   #--------------------------------------#
+#   - title: lovelace-backup-starter
+#     path: lovelace-backup-starter
+#     icon: "mdi:rocket-launch"
+# #    theme: "minimalist-desktop"
+#     cards: !include ui-lovelace-backup-starter.yaml
 #sample icons ☑️💡⚡ 🔥  🏠🌳

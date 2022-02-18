@@ -10,6 +10,9 @@
 - type: "custom:button-card"
   template: card_weather
   entity: weather.ascot_vale
+  hold_action:
+    entity: weather.ascot_vale_hourly
+    action: more-info
   variables:
     ulm_card_weather_name: " "
     ulm_card_weather_primary_info:
@@ -17,8 +20,21 @@
       - precipitation_probability
     ulm_card_weather_backdrop:
       fade: true
-- type: horizontal-stack
-  cards:
+- type: "custom:mod-card"
+  style:
+    .: |
+      ha-card {
+        # background-color: var(--card-background-color);
+        # border-radius: var(--border-radius);
+        # padding: 5px 10px;
+      }
+    hui-horizontal-stack-card$: |
+      #root {
+        justify-content: space-between;
+      }
+  card:
+    type: horizontal-stack
+    cards:
     # - type: custom:button-card
     #   entity: switch.linea_mini_main
     #   label: Espresso
@@ -29,6 +45,8 @@
     #   action:
     #   tap_action:
     #     action: toggle
+    # - type: "custom:button-card"
+    #   color_type: blank-card
     - type: custom:button-card
       entity: lock.lock_front_door_lock
       label: Front
@@ -73,11 +91,12 @@
         service_data:
           entity_id: cover.garage_door
     - type: "custom:button-card"
-      template: chip_mdi_icon_only
+      template: custom_chip_mekenthompson_mdi_icon_state
       entity: fan.fireplace
+      label:
       variables:
-        ulm_chip_mdi_icon_only_entity: fan.fireplace
-        ulm_chip_mdi_icon_only_icon: mdi:fireplace
+        ulm_chip_mdi_icon_state_entity: fan.fireplace
+        ulm_chip_mdi_icon_state_icon: mdi:fireplace
       tap_action:
         action: call-service
         service: fan.toggle
@@ -86,11 +105,12 @@
       hold_action:
         action: more-info
     - type: "custom:button-card"
-      template: chip_mdi_icon_only
+      template: custom_chip_mekenthompson_mdi_icon_state
       entity: fan.living_room_fan
+      label:
       variables:
-        ulm_chip_mdi_icon_only_entity: fan.living_room_fan
-        ulm_chip_mdi_icon_only_icon: mdi:fan
+        ulm_chip_mdi_icon_state_entity: fan.living_room_fan
+        ulm_chip_mdi_icon_state_icon: mdi:fan
       tap_action:
         action: call-service
         service: fan.toggle
@@ -99,8 +119,9 @@
       hold_action:
         action: more-info
     - type: "custom:button-card"
-      template: chip_mdi_icon_only
+      template: custom_chip_mekenthompson_mdi_icon_state
       entity: switch.linea_mini_main
+      label:
       tap_action:
         action: call-service
         service: switch.toggle
@@ -109,44 +130,55 @@
       hold_action:
         action: more-info
       variables:
-        ulm_chip_mdi_icon_only_entity: switch.linea_mini_main
-        ulm_chip_mdi_icon_only_icon: mdi:coffee
-
-        # service: switch.toggle
-        # data: {}
-        # target:
-        #   entity_id: switch.linea_mini_main
+        ulm_chip_mdi_icon_state_entity: switch.linea_mini_main
+        ulm_chip_mdi_icon_state_icon: mdi:coffee
+### PEOPLE ####
+- type: horizontal-stack
+  cards:
+    - type: 'custom:button-card'
+      template: card_person
+      variables:
+        ulm_card_person_entity: person.ken
+        ulm_card_person_use_entity_picture: true
+    - type: 'custom:button-card'
+      template: card_person
+      variables:
+        ulm_card_person_entity: person.lisa
+        ulm_card_person_use_entity_picture: true
 ## Climate ###
 - type: vertical-stack
   cards:
     - type: "custom:button-card"
       template: card_graph
+      tap_action:
+        entity: weather.ascot_vale_hourly
+        action: more-info
       variables:
         ulm_card_graph_color: "var(--google-blue)"
-        ulm_card_graph_name: Temperature Inside
+        ulm_card_graph_name: "Inside (Blue) | Outside (Green)"
         ulm_card_graph_entity: sensor.average_house_temperature
         ulm_card_graph_color2: "var(--google-green)"
         ulm_card_graph_entity2: sensor.essendon_airport_temp
         ulm_card_graph_type: fill
         ulm_card_graph_hours: 24
-    - type: horizontal-stack
-      cards:
-        - type: "custom:button-card"
-          template: custom_card_thermostat
-          entity: climate.all_heating
-          variables:
-            ulm_card_thermostat_enable_popup: true
-            ulm_card_thermostat_enable_collapse: false
-            ulm_card_thermostat_enable_controls: true
-            ulm_card_thermostat_enable_hvac_modes: false
-        - type: "custom:button-card"
-          template: custom_card_thermostat
-          entity: climate.all_cooling
-          variables:
-            ulm_card_thermostat_enable_popup: true
-            ulm_card_thermostat_enable_collapse: false
-            ulm_card_thermostat_enable_controls: true
-            ulm_card_thermostat_enable_hvac_modes: false
+- type: horizontal-stack
+  cards:
+    - type: "custom:button-card"
+      template: card_thermostat
+      entity: climate.all_heating
+      variables:
+        ulm_card_thermostat_enable_popup: true
+        ulm_card_thermostat_enable_collapse: false
+        ulm_card_thermostat_enable_controls: false
+        ulm_card_thermostat_enable_hvac_modes: false
+    - type: "custom:button-card"
+      template: card_thermostat
+      entity: climate.all_cooling
+      variables:
+        ulm_card_thermostat_enable_popup: true
+        ulm_card_thermostat_enable_collapse: false
+        ulm_card_thermostat_enable_controls: false
+        ulm_card_thermostat_enable_hvac_modes: false
 ## Lights ##
 - type: vertical-stack
   cards:
@@ -476,11 +508,3 @@
             ulm_card_light_enable_popup: true
             ulm_card_light_force_background_color: false
             ulm_card_light_enable_horizontal: true
-- type: vertical-stack
-  cards:
-    - type: "custom:button-card"
-      template:
-        - card_cover_with_buttons
-      variables:
-        ulm_card_cover_with_buttons_name: "Master Curtains"
-        ulm_card_cover_with_buttons_entity: "cover.master_curtains"

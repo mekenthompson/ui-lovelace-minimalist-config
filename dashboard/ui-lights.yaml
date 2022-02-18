@@ -6,371 +6,369 @@
 #--------------------------------------#
 # Tab : Cards                          #
 #--------------------------------------#
+- type: "custom:button-card"
+  template: card_title
+  name: Lights
+  label: Ground Floor
 - type: vertical-stack
   cards:
     - type: "custom:button-card"
-      template: card_title
-      name: Ground Floor
-      label:
-    - type: vertical-stack
-      cards:
-        - type: "custom:button-card"
-          template: card_light
-          entity: light.ground_floor_lights
-          variables:
-            ulm_card_light_enable_slider: true
-            ulm_card_light_enable_collapse: true
-            ulm_card_light_enable_color: false
-            ulm_card_light_enable_popup: true
-            ulm_card_light_force_background_color: false
-    - type: horizontal-stack
-      cards:
-        - type: "custom:button-card"
-          template: card_light
-          entity: light.kitchen_lights
-          variables:
-            ulm_card_light_enable_slider: true
-            ulm_card_light_enable_collapse: true
-            ulm_card_light_enable_color: false
-            ulm_card_light_enable_popup: true
-            ulm_card_light_force_background_color: false
-            ulm_card_light_enable_horizontal: true
-        - type: "custom:button-card"
-          template: card_light
-          entity: light.living_room_lights
-          variables:
-            ulm_card_light_enable_slider: true
-            ulm_card_light_enable_collapse: true
-            ulm_card_light_enable_color: false
-            ulm_card_light_enable_popup: true
-            ulm_card_light_force_background_color: false
-            ulm_card_light_enable_horizontal: true
-    - type: horizontal-stack
-      cards:
-        - type: "custom:button-card"
-          template: card_light
-          entity: light.fireplace_lights
-          variables:
-            ulm_card_light_enable_slider: true
-            ulm_card_light_enable_collapse: true
-            ulm_card_light_enable_color: false
-            ulm_card_light_enable_popup: true
-            ulm_card_light_force_background_color: false
-            ulm_card_light_enable_horizontal: true
-        - type: "custom:button-card"
-          template: card_light
-          entity: light.dining_lights
-          variables:
-            ulm_card_light_enable_slider: true
-            ulm_card_light_enable_collapse: true
-            ulm_card_light_enable_color: false
-            ulm_card_light_enable_popup: true
-            ulm_card_light_force_background_color: false
-            ulm_card_light_enable_horizontal: true
-    - type: horizontal-stack
-      cards:
-        - type: "custom:button-card"
-          template: card_light
-          entity: light.library_lights
-          variables:
-            ulm_card_light_enable_slider: true
-            ulm_card_light_enable_collapse: true
-            ulm_card_light_enable_color: false
-            ulm_card_light_enable_popup: true
-            ulm_card_light_force_background_color: false
-            ulm_card_light_enable_horizontal: true
-        - type: "custom:button-card"
-          template: card_light
-          entity: light.butler_s_pantry_lights
-          variables:
-            ulm_card_light_enable_slider: true
-            ulm_card_light_enable_collapse: true
-            ulm_card_light_enable_color: false
-            ulm_card_light_enable_popup: true
-            ulm_card_light_force_background_color: false
-            ulm_card_light_enable_horizontal: true
-    - type: horizontal-stack
-      cards:
-        - type: "custom:button-card"
-          template: card_light
-          entity: light.entry_lights
-          variables:
-            ulm_card_light_enable_slider: true
-            ulm_card_light_enable_collapse: true
-            ulm_card_light_enable_color: false
-            ulm_card_light_enable_popup: true
-            ulm_card_light_force_background_color: false
-            ulm_card_light_enable_horizontal: true
-        - type: "custom:button-card"
-          template: card_light
-          entity: light.guest_bedroom_lights
-          variables:
-            ulm_card_light_enable_slider: true
-            ulm_card_light_enable_collapse: true
-            ulm_card_light_enable_color: false
-            ulm_card_light_enable_popup: true
-            ulm_card_light_force_background_color: false
-            ulm_card_light_enable_horizontal: true
-    - type: horizontal-stack
-      cards:
-        - type: "custom:button-card"
-          template: card_light
-          entity: light.guest_bath_lights
-          variables:
-            ulm_card_light_enable_slider: true
-            ulm_card_light_enable_collapse: true
-            ulm_card_light_enable_color: false
-            ulm_card_light_enable_popup: true
-            ulm_card_light_force_background_color: false
-            ulm_card_light_enable_horizontal: true
-        - type: "custom:button-card"
-          template: card_light
-          entity: light.garage_on_off
-          variables:
-            ulm_card_light_enable_slider: true
-            ulm_card_light_enable_collapse: true
-            ulm_card_light_enable_color: false
-            ulm_card_light_enable_popup: true
-            ulm_card_light_force_background_color: false
-            ulm_card_light_enable_horizontal: true
+      template: card_light
+      entity: light.ground_floor_lights
+      variables:
+        ulm_card_light_enable_slider: true
+        ulm_card_light_enable_collapse: true
+        ulm_card_light_enable_color: false
+        ulm_card_light_enable_popup: true
+        ulm_card_light_force_background_color: false
+- type: horizontal-stack
+  cards:
+    - type: "custom:button-card"
+      template: card_light
+      entity: light.kitchen_lights
+      variables:
+        ulm_card_light_enable_slider: true
+        ulm_card_light_enable_collapse: true
+        ulm_card_light_enable_color: false
+        ulm_card_light_enable_popup: true
+        ulm_card_light_force_background_color: false
+        ulm_card_light_enable_horizontal: true
+    - type: "custom:button-card"
+      template: card_light
+      entity: light.living_room_lights
+      variables:
+        ulm_card_light_enable_slider: true
+        ulm_card_light_enable_collapse: true
+        ulm_card_light_enable_color: false
+        ulm_card_light_enable_popup: true
+        ulm_card_light_force_background_color: false
+        ulm_card_light_enable_horizontal: true
+- type: horizontal-stack
+  cards:
+    - type: "custom:button-card"
+      template: card_light
+      entity: light.fireplace_lights
+      variables:
+        ulm_card_light_enable_slider: true
+        ulm_card_light_enable_collapse: true
+        ulm_card_light_enable_color: false
+        ulm_card_light_enable_popup: true
+        ulm_card_light_force_background_color: false
+        ulm_card_light_enable_horizontal: true
+    - type: "custom:button-card"
+      template: card_light
+      entity: light.dining_lights
+      variables:
+        ulm_card_light_enable_slider: true
+        ulm_card_light_enable_collapse: true
+        ulm_card_light_enable_color: false
+        ulm_card_light_enable_popup: true
+        ulm_card_light_force_background_color: false
+        ulm_card_light_enable_horizontal: true
+- type: horizontal-stack
+  cards:
+    - type: "custom:button-card"
+      template: card_light
+      entity: light.library_lights
+      variables:
+        ulm_card_light_enable_slider: true
+        ulm_card_light_enable_collapse: true
+        ulm_card_light_enable_color: false
+        ulm_card_light_enable_popup: true
+        ulm_card_light_force_background_color: false
+        ulm_card_light_enable_horizontal: true
+    - type: "custom:button-card"
+      template: card_light
+      entity: light.butler_s_pantry_lights
+      variables:
+        ulm_card_light_enable_slider: true
+        ulm_card_light_enable_collapse: true
+        ulm_card_light_enable_color: false
+        ulm_card_light_enable_popup: true
+        ulm_card_light_force_background_color: false
+        ulm_card_light_enable_horizontal: true
+- type: horizontal-stack
+  cards:
+    - type: "custom:button-card"
+      template: card_light
+      entity: light.entry_lights
+      variables:
+        ulm_card_light_enable_slider: true
+        ulm_card_light_enable_collapse: true
+        ulm_card_light_enable_color: false
+        ulm_card_light_enable_popup: true
+        ulm_card_light_force_background_color: false
+        ulm_card_light_enable_horizontal: true
+    - type: "custom:button-card"
+      template: card_light
+      entity: light.guest_bedroom_lights
+      variables:
+        ulm_card_light_enable_slider: true
+        ulm_card_light_enable_collapse: true
+        ulm_card_light_enable_color: false
+        ulm_card_light_enable_popup: true
+        ulm_card_light_force_background_color: false
+        ulm_card_light_enable_horizontal: true
+- type: horizontal-stack
+  cards:
+    - type: "custom:button-card"
+      template: card_light
+      entity: light.guest_bath_lights
+      variables:
+        ulm_card_light_enable_slider: true
+        ulm_card_light_enable_collapse: true
+        ulm_card_light_enable_color: false
+        ulm_card_light_enable_popup: true
+        ulm_card_light_force_background_color: false
+        ulm_card_light_enable_horizontal: true
+    - type: "custom:button-card"
+      template: card_light
+      entity: light.garage_on_off
+      variables:
+        ulm_card_light_enable_slider: true
+        ulm_card_light_enable_collapse: true
+        ulm_card_light_enable_color: false
+        ulm_card_light_enable_popup: true
+        ulm_card_light_force_background_color: false
+        ulm_card_light_enable_horizontal: true
+- type: "custom:button-card"
+  template: card_title
+  name:
+  label: First Floor
 - type: vertical-stack
   cards:
     - type: "custom:button-card"
-      template: card_title
-      name: First Floor
-      label:
-    - type: vertical-stack
-      cards:
-        - type: "custom:button-card"
-          template: card_light
-          entity: light.first_floor_lights
-          variables:
-            ulm_card_light_enable_slider: true
-            ulm_card_light_enable_collapse: true
-            ulm_card_light_enable_color: false
-            ulm_card_light_enable_popup: true
-            ulm_card_light_force_background_color: false
-    - type: horizontal-stack
-      cards:
-        - type: "custom:button-card"
-          template: card_light
-          entity: light.master_bedroom_lights
-          variables:
-            ulm_card_light_enable_slider: true
-            ulm_card_light_enable_collapse: true
-            ulm_card_light_enable_color: false
-            ulm_card_light_enable_popup: true
-            ulm_card_light_force_background_color: false
-            ulm_card_light_enable_horizontal: true
-        - type: "custom:button-card"
-          template: card_light
-          entity: light.ensuite_lights
-          variables:
-            ulm_card_light_enable_slider: true
-            ulm_card_light_enable_collapse: true
-            ulm_card_light_enable_color: false
-            ulm_card_light_enable_popup: true
-            ulm_card_light_force_background_color: false
-            ulm_card_light_enable_horizontal: true
-    - type: horizontal-stack
-      cards:
-        - type: "custom:button-card"
-          template: card_light
-          entity: light.office_lights
-          variables:
-            ulm_card_light_enable_slider: true
-            ulm_card_light_enable_collapse: true
-            ulm_card_light_enable_color: false
-            ulm_card_light_enable_popup: true
-            ulm_card_light_force_background_color: false
-            ulm_card_light_enable_horizontal: true
-        - type: "custom:button-card"
-          template: card_light
-          entity: light.master_robe_lights
-          variables:
-            ulm_card_light_enable_slider: true
-            ulm_card_light_enable_collapse: true
-            ulm_card_light_enable_color: false
-            ulm_card_light_enable_popup: true
-            ulm_card_light_force_background_color: false
-            ulm_card_light_enable_horizontal: true
-    - type: horizontal-stack
-      cards:
-        - type: "custom:button-card"
-          template: card_light
-          entity: light.stairs_up_lights
-          variables:
-            ulm_card_light_enable_slider: true
-            ulm_card_light_enable_collapse: true
-            ulm_card_light_enable_color: false
-            ulm_card_light_enable_popup: true
-            ulm_card_light_force_background_color: false
-            ulm_card_light_enable_horizontal: true
+      template: card_light
+      entity: light.first_floor_lights
+      variables:
+        ulm_card_light_enable_slider: true
+        ulm_card_light_enable_collapse: true
+        ulm_card_light_enable_color: false
+        ulm_card_light_enable_popup: true
+        ulm_card_light_force_background_color: false
+- type: horizontal-stack
+  cards:
+    - type: "custom:button-card"
+      template: card_light
+      entity: light.master_bedroom_lights
+      variables:
+        ulm_card_light_enable_slider: true
+        ulm_card_light_enable_collapse: true
+        ulm_card_light_enable_color: false
+        ulm_card_light_enable_popup: true
+        ulm_card_light_force_background_color: false
+        ulm_card_light_enable_horizontal: true
+    - type: "custom:button-card"
+      template: card_light
+      entity: light.ensuite_lights
+      variables:
+        ulm_card_light_enable_slider: true
+        ulm_card_light_enable_collapse: true
+        ulm_card_light_enable_color: false
+        ulm_card_light_enable_popup: true
+        ulm_card_light_force_background_color: false
+        ulm_card_light_enable_horizontal: true
+- type: horizontal-stack
+  cards:
+    - type: "custom:button-card"
+      template: card_light
+      entity: light.office_lights
+      variables:
+        ulm_card_light_enable_slider: true
+        ulm_card_light_enable_collapse: true
+        ulm_card_light_enable_color: false
+        ulm_card_light_enable_popup: true
+        ulm_card_light_force_background_color: false
+        ulm_card_light_enable_horizontal: true
+    - type: "custom:button-card"
+      template: card_light
+      entity: light.master_robe_lights
+      variables:
+        ulm_card_light_enable_slider: true
+        ulm_card_light_enable_collapse: true
+        ulm_card_light_enable_color: false
+        ulm_card_light_enable_popup: true
+        ulm_card_light_force_background_color: false
+        ulm_card_light_enable_horizontal: true
+- type: horizontal-stack
+  cards:
+    - type: "custom:button-card"
+      template: card_light
+      entity: light.stairs_up_lights
+      variables:
+        ulm_card_light_enable_slider: true
+        ulm_card_light_enable_collapse: true
+        ulm_card_light_enable_color: false
+        ulm_card_light_enable_popup: true
+        ulm_card_light_force_background_color: false
+        ulm_card_light_enable_horizontal: true
+    - type: "custom:button-card"
+      color_type: blank-card
+- type: "custom:button-card"
+  template: card_title
+  name:
+  label: Lower Ground Lights
 - type: vertical-stack
   cards:
     - type: "custom:button-card"
-      template: card_title
-      name: Lower Ground Lights
-      label:
-    - type: vertical-stack
-      cards:
-        - type: "custom:button-card"
-          template: card_light
-          entity: light.lower_ground_lights
-          variables:
-            ulm_card_light_enable_slider: true
-            ulm_card_light_enable_collapse: true
-            ulm_card_light_enable_color: false
-            ulm_card_light_enable_popup: true
-            ulm_card_light_force_background_color: false
-    - type: horizontal-stack
-      cards:
-        - type: "custom:button-card"
-          template: card_light
-          entity: light.rumpus_lights
-          variables:
-            ulm_card_light_enable_slider: true
-            ulm_card_light_enable_collapse: true
-            ulm_card_light_enable_color: false
-            ulm_card_light_enable_popup: true
-            ulm_card_light_force_background_color: false
-            ulm_card_light_enable_horizontal: true
-        - type: "custom:button-card"
-          template: card_light
-          entity: light.kid_s_bathroom
-          variables:
-            ulm_card_light_enable_slider: true
-            ulm_card_light_enable_collapse: true
-            ulm_card_light_enable_color: false
-            ulm_card_light_enable_popup: true
-            ulm_card_light_force_background_color: false
-            ulm_card_light_enable_horizontal: true
-    - type: horizontal-stack
-      cards:
-        - type: "custom:button-card"
-          template: card_light
-          entity: light.sidney_s_lights
-          variables:
-            ulm_card_light_enable_slider: true
-            ulm_card_light_enable_collapse: true
-            ulm_card_light_enable_color: false
-            ulm_card_light_enable_popup: true
-            ulm_card_light_force_background_color: false
-            ulm_card_light_enable_horizontal: true
-        - type: "custom:button-card"
-          template: card_light
-          entity: light.sidney_lamp
-          variables:
-            ulm_card_light_enable_slider: true
-            ulm_card_light_enable_collapse: true
-            ulm_card_light_enable_color: false
-            ulm_card_light_enable_popup: true
-            ulm_card_light_force_background_color: false
-            ulm_card_light_enable_horizontal: true
-    - type: horizontal-stack
-      cards:
-        - type: "custom:button-card"
-          template: card_light
-          entity: light.mabel_s_lights
-          variables:
-            ulm_card_light_enable_slider: true
-            ulm_card_light_enable_collapse: true
-            ulm_card_light_enable_color: false
-            ulm_card_light_enable_popup: true
-            ulm_card_light_force_background_color: false
-            ulm_card_light_enable_horizontal: true
-        - type: "custom:button-card"
-          template: card_light
-          entity: light.mabel_lamp
-          variables:
-            ulm_card_light_enable_slider: true
-            ulm_card_light_enable_collapse: true
-            ulm_card_light_enable_color: false
-            ulm_card_light_enable_popup: true
-            ulm_card_light_force_background_color: false
-            ulm_card_light_enable_horizontal: true
-    - type: horizontal-stack
-      cards:
-        - type: "custom:button-card"
-          template: card_light
-          entity: light.stairs_down_lights
-          variables:
-            ulm_card_light_enable_slider: true
-            ulm_card_light_enable_collapse: true
-            ulm_card_light_enable_color: false
-            ulm_card_light_enable_popup: true
-            ulm_card_light_force_background_color: false
-            ulm_card_light_enable_horizontal: true
+      template: card_light
+      entity: light.lower_ground_lights
+      variables:
+        ulm_card_light_enable_slider: true
+        ulm_card_light_enable_collapse: true
+        ulm_card_light_enable_color: false
+        ulm_card_light_enable_popup: true
+        ulm_card_light_force_background_color: false
+- type: horizontal-stack
+  cards:
+    - type: "custom:button-card"
+      template: card_light
+      entity: light.rumpus_lights
+      variables:
+        ulm_card_light_enable_slider: true
+        ulm_card_light_enable_collapse: true
+        ulm_card_light_enable_color: false
+        ulm_card_light_enable_popup: true
+        ulm_card_light_force_background_color: false
+        ulm_card_light_enable_horizontal: true
+    - type: "custom:button-card"
+      template: card_light
+      entity: light.kid_s_bathroom
+      variables:
+        ulm_card_light_enable_slider: true
+        ulm_card_light_enable_collapse: true
+        ulm_card_light_enable_color: false
+        ulm_card_light_enable_popup: true
+        ulm_card_light_force_background_color: false
+        ulm_card_light_enable_horizontal: true
+- type: horizontal-stack
+  cards:
+    - type: "custom:button-card"
+      template: card_light
+      entity: light.sidney_s_lights
+      variables:
+        ulm_card_light_enable_slider: true
+        ulm_card_light_enable_collapse: true
+        ulm_card_light_enable_color: false
+        ulm_card_light_enable_popup: true
+        ulm_card_light_force_background_color: false
+        ulm_card_light_enable_horizontal: true
+    - type: "custom:button-card"
+      template: card_light
+      entity: light.sidney_lamp
+      variables:
+        ulm_card_light_enable_slider: true
+        ulm_card_light_enable_collapse: true
+        ulm_card_light_enable_color: false
+        ulm_card_light_enable_popup: true
+        ulm_card_light_force_background_color: false
+        ulm_card_light_enable_horizontal: true
+- type: horizontal-stack
+  cards:
+    - type: "custom:button-card"
+      template: card_light
+      entity: light.mabel_s_lights
+      variables:
+        ulm_card_light_enable_slider: true
+        ulm_card_light_enable_collapse: true
+        ulm_card_light_enable_color: false
+        ulm_card_light_enable_popup: true
+        ulm_card_light_force_background_color: false
+        ulm_card_light_enable_horizontal: true
+    - type: "custom:button-card"
+      template: card_light
+      entity: light.mabel_lamp
+      variables:
+        ulm_card_light_enable_slider: true
+        ulm_card_light_enable_collapse: true
+        ulm_card_light_enable_color: false
+        ulm_card_light_enable_popup: true
+        ulm_card_light_force_background_color: false
+        ulm_card_light_enable_horizontal: true
+- type: horizontal-stack
+  cards:
+    - type: "custom:button-card"
+      template: card_light
+      entity: light.stairs_down_lights
+      variables:
+        ulm_card_light_enable_slider: true
+        ulm_card_light_enable_collapse: true
+        ulm_card_light_enable_color: false
+        ulm_card_light_enable_popup: true
+        ulm_card_light_force_background_color: false
+        ulm_card_light_enable_horizontal: true
+    - type: "custom:button-card"
+      color_type: blank-card
+- type: "custom:button-card"
+  template: card_title
+  name:
+  label: Outdoor Lights
 - type: vertical-stack
   cards:
     - type: "custom:button-card"
-      template: card_title
-      name: Outdoor Lights
-      label:
-    - type: vertical-stack
-      cards:
-        - type: "custom:button-card"
-          template: card_light
-          entity: light.outdoor_lights
-          variables:
-            ulm_card_light_enable_slider: true
-            ulm_card_light_enable_collapse: true
-            ulm_card_light_enable_color: false
-            ulm_card_light_enable_popup: true
-            ulm_card_light_force_background_color: false
-    - type: horizontal-stack
-      cards:
-        - type: "custom:button-card"
-          template: card_light
-          entity: light.front_yard_lights
-          variables:
-            ulm_card_light_enable_slider: true
-            ulm_card_light_enable_collapse: true
-            ulm_card_light_enable_color: false
-            ulm_card_light_enable_popup: true
-            ulm_card_light_force_background_color: false
-            ulm_card_light_enable_horizontal: true
-        - type: "custom:button-card"
-          template: card_light
-          entity: light.deck_lights
-          variables:
-            ulm_card_light_enable_slider: true
-            ulm_card_light_enable_collapse: true
-            ulm_card_light_enable_color: false
-            ulm_card_light_enable_popup: true
-            ulm_card_light_force_background_color: false
-            ulm_card_light_enable_horizontal: true
-    - type: horizontal-stack
-      cards:
-        - type: "custom:button-card"
-          template: card_light
-          entity: light.festoon_lights
-          variables:
-            ulm_card_light_enable_slider: true
-            ulm_card_light_enable_collapse: true
-            ulm_card_light_enable_color: false
-            ulm_card_light_enable_popup: true
-            ulm_card_light_force_background_color: false
-            ulm_card_light_enable_horizontal: true
-        - type: "custom:button-card"
-          template: card_light
-          entity: light.festoon_control
-          variables:
-            ulm_card_light_enable_slider: true
-            ulm_card_light_enable_collapse: true
-            ulm_card_light_enable_color: false
-            ulm_card_light_enable_popup: true
-            ulm_card_light_force_background_color: false
-            ulm_card_light_enable_horizontal: true
-    - type: horizontal-stack
-      cards:
-        - type: "custom:button-card"
-          template: card_light
-          entity: light.balcony_lights
-          variables:
-            ulm_card_light_enable_slider: true
-            ulm_card_light_enable_collapse: true
-            ulm_card_light_enable_color: false
-            ulm_card_light_enable_popup: true
-            ulm_card_light_force_background_color: false
-            ulm_card_light_enable_horizontal: true
+      template: card_light
+      entity: light.outdoor_lights
+      variables:
+        ulm_card_light_enable_slider: true
+        ulm_card_light_enable_collapse: true
+        ulm_card_light_enable_color: false
+        ulm_card_light_enable_popup: true
+        ulm_card_light_force_background_color: false
+- type: horizontal-stack
+  cards:
+    - type: "custom:button-card"
+      template: card_light
+      entity: light.front_yard_lights
+      variables:
+        ulm_card_light_enable_slider: true
+        ulm_card_light_enable_collapse: true
+        ulm_card_light_enable_color: false
+        ulm_card_light_enable_popup: true
+        ulm_card_light_force_background_color: false
+        ulm_card_light_enable_horizontal: true
+    - type: "custom:button-card"
+      template: card_light
+      entity: light.deck_lights
+      variables:
+        ulm_card_light_enable_slider: true
+        ulm_card_light_enable_collapse: true
+        ulm_card_light_enable_color: false
+        ulm_card_light_enable_popup: true
+        ulm_card_light_force_background_color: false
+        ulm_card_light_enable_horizontal: true
+- type: horizontal-stack
+  cards:
+    - type: "custom:button-card"
+      template: card_light
+      entity: light.festoon_lights
+      variables:
+        ulm_card_light_enable_slider: true
+        ulm_card_light_enable_collapse: true
+        ulm_card_light_enable_color: false
+        ulm_card_light_enable_popup: true
+        ulm_card_light_force_background_color: false
+        ulm_card_light_enable_horizontal: true
+    - type: "custom:button-card"
+      template: card_light
+      entity: light.festoon_control
+      variables:
+        ulm_card_light_enable_slider: true
+        ulm_card_light_enable_collapse: true
+        ulm_card_light_enable_color: false
+        ulm_card_light_enable_popup: true
+        ulm_card_light_force_background_color: false
+        ulm_card_light_enable_horizontal: true
+- type: horizontal-stack
+  cards:
+    - type: "custom:button-card"
+      template: card_light
+      entity: light.balcony_lights
+      variables:
+        ulm_card_light_enable_slider: true
+        ulm_card_light_enable_collapse: true
+        ulm_card_light_enable_color: false
+        ulm_card_light_enable_popup: true
+        ulm_card_light_force_background_color: false
+        ulm_card_light_enable_horizontal: true
+    - type: "custom:button-card"
+      color_type: blank-card
